@@ -1,0 +1,48 @@
+﻿@model IEnumerable<databaseHempPlantations.Models.Review>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reviews</title>
+    <style>
+        /* Add your styling here */
+         body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h3 {
+            color: #333;
+        }
+
+        p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h2>Reviews</h2>
+
+    @foreach (var item in Model)
+    {
+        <div class="card">
+            <p><strong>ID:</strong> @item.ReviewID</p>
+            <p><strong>Consumer ID:</strong> @item.ConsumerID</p>
+            <p><strong>Agronomist ID:</strong> @item.AgronomistID</p>
+            <p><strong>Review Date:</strong> @item.ReviewDate.ToShortDateString()</p>
+            <p><strong>Rating:</strong> @item.Rating</p>
+            <p><strong>Comment:</strong> @item.Comment</p>
+            <!-- Add other fields as needed -->
+        </div>
+    }
+</body>
+</html>

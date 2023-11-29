@@ -1,0 +1,45 @@
+﻿@model IEnumerable<databaseHempPlantations.Models.HempVariety>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hemp Varieties</title>
+    <style>
+        /* Add your styling here */
+         body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h3 {
+            color: #333;
+        }
+
+        p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h2>Hemp Varieties</h2>
+
+    @foreach (var item in Model)
+    {
+        <div class="card">
+            <h3>@item.VarietyName</h3>
+            <p><strong>ID:</strong> @item.VarietyID</p>
+            <p><strong>Description:</strong> @item.Description</p>
+            <!-- Add other fields as needed -->
+        </div>
+    }
+</body>
+</html>

@@ -1,0 +1,45 @@
+﻿@model IEnumerable<databaseHempPlantations.Models.TastingReview>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tasting Reviews</title>
+    <style>
+        /* Add your styling here */
+         body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h3 {
+            color: #333;
+        }
+
+        p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h2>Tasting Reviews</h2>
+
+    @foreach (var item in Model)
+    {
+        <div class="card">
+            <p><strong>ID:</strong> @item.TastingReviewID</p>
+            <p><strong>Tasting ID:</strong> @item.TastingID</p>
+            <p><strong>Review ID:</strong> @item.ReviewID</p>
+            <!-- Add other fields as needed -->
+        </div>
+    }
+</body>
+</html>

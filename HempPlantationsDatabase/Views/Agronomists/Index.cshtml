@@ -1,0 +1,46 @@
+﻿@model IEnumerable<databaseHempPlantations.Models.Agronomist>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h3 {
+            color: #333;
+        }
+
+        p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h2>Agronomists</h2>
+
+    @foreach (var item in Model)
+    {
+        <div class="card">
+            <h3>@item.FirstName @item.LastName</h3>
+            <p><strong>ID:</strong> @item.AgronomistID</p>
+            <p><strong>Email:</strong> @item.Email</p>
+            <p><strong>Phone number:</strong> @item.PhoneNumber</p>
+            <p><strong>Hire date:</strong> @item.HireDate.ToShortDateString()</p>
+            <p><strong>Specialty:</strong> @item.Specialty</p>
+        </div>
+    }
+</body>
+</html>
