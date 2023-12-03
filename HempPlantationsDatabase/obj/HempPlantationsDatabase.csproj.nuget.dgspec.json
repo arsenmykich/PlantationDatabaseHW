@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\cpp\\000 cs\\0 1univer\\0БД\\Hemp plantations\\HempPlantationsDatabaseGit\\HempPlantationsDatabase\\HempPlantationsDatabase.csproj": {}
+    "D:\\Programming\\DataBaseProject\\HempPlantationsDatabase\\HempPlantationsDatabase.csproj": {}
   },
   "projects": {
-    "D:\\cpp\\000 cs\\0 1univer\\0БД\\Hemp plantations\\HempPlantationsDatabaseGit\\HempPlantationsDatabase\\HempPlantationsDatabase.csproj": {
+    "D:\\Programming\\DataBaseProject\\HempPlantationsDatabase\\HempPlantationsDatabase.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\cpp\\000 cs\\0 1univer\\0БД\\Hemp plantations\\HempPlantationsDatabaseGit\\HempPlantationsDatabase\\HempPlantationsDatabase.csproj",
+        "projectUniqueName": "D:\\Programming\\DataBaseProject\\HempPlantationsDatabase\\HempPlantationsDatabase.csproj",
         "projectName": "HempPlantationsDatabase",
-        "projectPath": "D:\\cpp\\000 cs\\0 1univer\\0БД\\Hemp plantations\\HempPlantationsDatabaseGit\\HempPlantationsDatabase\\HempPlantationsDatabase.csproj",
-        "packagesPath": "C:\\Users\\arsen\\.nuget\\packages\\",
-        "outputPath": "D:\\cpp\\000 cs\\0 1univer\\0БД\\Hemp plantations\\HempPlantationsDatabaseGit\\HempPlantationsDatabase\\obj\\",
+        "projectPath": "D:\\Programming\\DataBaseProject\\HempPlantationsDatabase\\HempPlantationsDatabase.csproj",
+        "packagesPath": "C:\\Users\\cagal\\.nuget\\packages\\",
+        "outputPath": "D:\\Programming\\DataBaseProject\\HempPlantationsDatabase\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\arsen\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\cagal\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,6 +51,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",

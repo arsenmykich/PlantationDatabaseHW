@@ -7,5 +7,7 @@
         public int VarietyID { get; set; }
         public DateTime HarvestDate { get; set; }
         public int Quantity { get; set; }
+        public virtual HempVariety HempVarieties { get; set; }
+        public virtual Agronomist Agronomisties { get; set; }
     }
 }

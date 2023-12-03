@@ -8,5 +8,7 @@
         public DateTime ReviewDate { get; set; }
         public int Rating { get; set; }
         public string Comment { get; set; }
+        public virtual Consumer Consumeries { get; set; }
+        public virtual Agronomist Agronomisties { get; set; }
     }
 }

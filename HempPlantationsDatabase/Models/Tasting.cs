@@ -8,5 +8,9 @@
         public int ProductID { get; set; }
         public DateTime TastingDate { get; set; }
         public int Rating { get; set; }
+
+        public virtual Consumer Consumeries { get; set; }
+        public virtual Agronomist Agronomisties { get; set; }
+        public virtual Product Producties { get; set; }
     }
 }

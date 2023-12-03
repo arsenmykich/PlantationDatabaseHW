@@ -9,5 +9,8 @@
         public DateTime PurchaseDate { get; set; }
         public int Quantity { get; set; }
         public decimal TotalPrice { get; set; }
+        public virtual Consumer Consumeries { get; set; }
+        public virtual Agronomist Agronomisties { get; set; }
+        public virtual Product Producties { get; set; }
     }
 }
