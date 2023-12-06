@@ -7,5 +7,7 @@
         public int HarvestID { get; set; }
         public DateTime TripDate { get; set; }
         public string Destination { get; set; }
+        public virtual Harvest Harvesties { get; set; }
+        public virtual Agronomist Agronomisties { get; set; }
     }
 }

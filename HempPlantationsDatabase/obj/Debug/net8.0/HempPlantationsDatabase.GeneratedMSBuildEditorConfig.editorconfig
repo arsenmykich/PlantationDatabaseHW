@@ -9,99 +9,99 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = HempPlantationsDatabase
 build_property.RootNamespace = HempPlantationsDatabase
-build_property.ProjectDir = D:\cpp\000 cs\0 1univer\0БД\Hemp plantations\HempPlantationsDatabaseGit\HempPlantationsDatabase\
+build_property.ProjectDir = D:\Programming\DataBaseProject\HempPlantationsDatabase\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\cpp\000 cs\0 1univer\0БД\Hemp plantations\HempPlantationsDatabaseGit\HempPlantationsDatabase
+build_property.MSBuildProjectDirectory = D:\Programming\DataBaseProject\HempPlantationsDatabase
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/cpp/000 cs/0 1univer/0БД/Hemp plantations/HempPlantationsDatabaseGit/HempPlantationsDatabase/Views/Agronomists/Index.cshtml]
+[D:/Programming/DataBaseProject/HempPlantationsDatabase/Views/Agronomists/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdyb25vbWlzdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/cpp/000 cs/0 1univer/0БД/Hemp plantations/HempPlantationsDatabaseGit/HempPlantationsDatabase/Views/Consumers/Index.cshtml]
+[D:/Programming/DataBaseProject/HempPlantationsDatabase/Views/Consumers/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uc3VtZXJzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/cpp/000 cs/0 1univer/0БД/Hemp plantations/HempPlantationsDatabaseGit/HempPlantationsDatabase/Views/HarvestProducts/Index.cshtml]
+[D:/Programming/DataBaseProject/HempPlantationsDatabase/Views/HarvestProducts/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFydmVzdFByb2R1Y3RzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/cpp/000 cs/0 1univer/0БД/Hemp plantations/HempPlantationsDatabaseGit/HempPlantationsDatabase/Views/Harvests/Index.cshtml]
+[D:/Programming/DataBaseProject/HempPlantationsDatabase/Views/Harvests/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFydmVzdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/cpp/000 cs/0 1univer/0БД/Hemp plantations/HempPlantationsDatabaseGit/HempPlantationsDatabase/Views/HempVarieties/Index.cshtml]
+[D:/Programming/DataBaseProject/HempPlantationsDatabase/Views/HempVarieties/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVtcFZhcmlldGllc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/cpp/000 cs/0 1univer/0БД/Hemp plantations/HempPlantationsDatabaseGit/HempPlantationsDatabase/Views/Home/Error.cshtml]
+[D:/Programming/DataBaseProject/HempPlantationsDatabase/Views/Home/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFcnJvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/cpp/000 cs/0 1univer/0БД/Hemp plantations/HempPlantationsDatabaseGit/HempPlantationsDatabase/Views/Home/Index.cshtml]
+[D:/Programming/DataBaseProject/HempPlantationsDatabase/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/cpp/000 cs/0 1univer/0БД/Hemp plantations/HempPlantationsDatabaseGit/HempPlantationsDatabase/Views/Home/Privacy.cshtml]
+[D:/Programming/DataBaseProject/HempPlantationsDatabase/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/cpp/000 cs/0 1univer/0БД/Hemp plantations/HempPlantationsDatabaseGit/HempPlantationsDatabase/Views/Home/Schema.cshtml]
+[D:/Programming/DataBaseProject/HempPlantationsDatabase/Views/Home/Schema.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTY2hlbWEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/cpp/000 cs/0 1univer/0БД/Hemp plantations/HempPlantationsDatabaseGit/HempPlantationsDatabase/Views/Products/Index.cshtml]
+[D:/Programming/DataBaseProject/HempPlantationsDatabase/Views/Products/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/cpp/000 cs/0 1univer/0БД/Hemp plantations/HempPlantationsDatabaseGit/HempPlantationsDatabase/Views/Purchases/Index.cshtml]
+[D:/Programming/DataBaseProject/HempPlantationsDatabase/Views/Purchases/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/cpp/000 cs/0 1univer/0БД/Hemp plantations/HempPlantationsDatabaseGit/HempPlantationsDatabase/Views/Returns/Index.cshtml]
+[D:/Programming/DataBaseProject/HempPlantationsDatabase/Views/Returns/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV0dXJuc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/cpp/000 cs/0 1univer/0БД/Hemp plantations/HempPlantationsDatabaseGit/HempPlantationsDatabase/Views/Reviews/Index.cshtml]
+[D:/Programming/DataBaseProject/HempPlantationsDatabase/Views/Reviews/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3c1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/cpp/000 cs/0 1univer/0БД/Hemp plantations/HempPlantationsDatabaseGit/HempPlantationsDatabase/Views/Shared/Error.cshtml]
+[D:/Programming/DataBaseProject/HempPlantationsDatabase/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/cpp/000 cs/0 1univer/0БД/Hemp plantations/HempPlantationsDatabaseGit/HempPlantationsDatabase/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/Programming/DataBaseProject/HempPlantationsDatabase/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/cpp/000 cs/0 1univer/0БД/Hemp plantations/HempPlantationsDatabaseGit/HempPlantationsDatabase/Views/TastingReviews/Index.cshtml]
+[D:/Programming/DataBaseProject/HempPlantationsDatabase/Views/TastingReviews/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFzdGluZ1Jldmlld3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/cpp/000 cs/0 1univer/0БД/Hemp plantations/HempPlantationsDatabaseGit/HempPlantationsDatabase/Views/Tastings/Index.cshtml]
+[D:/Programming/DataBaseProject/HempPlantationsDatabase/Views/Tastings/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFzdGluZ3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/cpp/000 cs/0 1univer/0БД/Hemp plantations/HempPlantationsDatabaseGit/HempPlantationsDatabase/Views/TravelAssignments/Index.cshtml]
+[D:/Programming/DataBaseProject/HempPlantationsDatabase/Views/TravelAssignments/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhdmVsQXNzaWdubWVudHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/cpp/000 cs/0 1univer/0БД/Hemp plantations/HempPlantationsDatabaseGit/HempPlantationsDatabase/Views/Trips/Index.cshtml]
+[D:/Programming/DataBaseProject/HempPlantationsDatabase/Views/Trips/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJpcHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/cpp/000 cs/0 1univer/0БД/Hemp plantations/HempPlantationsDatabaseGit/HempPlantationsDatabase/Views/_ViewImports.cshtml]
+[D:/Programming/DataBaseProject/HempPlantationsDatabase/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/cpp/000 cs/0 1univer/0БД/Hemp plantations/HempPlantationsDatabaseGit/HempPlantationsDatabase/Views/_ViewStart.cshtml]
+[D:/Programming/DataBaseProject/HempPlantationsDatabase/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/cpp/000 cs/0 1univer/0БД/Hemp plantations/HempPlantationsDatabaseGit/HempPlantationsDatabase/Views/Shared/_Layout.cshtml]
+[D:/Programming/DataBaseProject/HempPlantationsDatabase/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-wa42h38efs

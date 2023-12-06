@@ -48,21 +48,6 @@ namespace HempPlantationsDatabase.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "HarvestProducts",
-                columns: table => new
-                {
-                    HarvestProductID = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
-                    HarvestID = table.Column<int>(type: "integer", nullable: false),
-                    ProductID = table.Column<int>(type: "integer", nullable: false),
-                    Quantity = table.Column<int>(type: "integer", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_HarvestProducts", x => x.HarvestProductID);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Harvests",
                 columns: table => new
                 {
@@ -76,6 +61,41 @@ namespace HempPlantationsDatabase.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Harvests", x => x.HarvestID);
+                    table.ForeignKey(
+                        name: "FK_Harvests_VarietyID",
+                        column: x => x.VarietyID,
+                        principalTable: "HempVarieties",
+                        principalColumn: "VarietyID");
+                    table.ForeignKey(
+                        name: "FK_Harvests_AgronomistID",
+                        column: x => x.AgronomistID,
+                        principalTable: "Agronomists",
+                        principalColumn: "AgronomistID");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "HarvestProducts",
+                columns: table => new
+                {
+                    HarvestProductID = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                    HarvestID = table.Column<int>(type: "integer", nullable: false),
+                    ProductID = table.Column<int>(type: "integer", nullable: false),
+                    Quantity = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_HarvestProducts", x => x.HarvestProductID);
+                    table.ForeignKey(
+                        name: "FK_HarvestProducts_HarvestID",
+                        column: x => x.HarvestID,
+                        principalTable: "Harvests",
+                        principalColumn: "HarvestID");
+                    table.ForeignKey(
+                        name: "FK_HarvestProducts_ProductID",
+                        column: x => x.ProductID,
+                        principalTable: "Products",
+                        principalColumn: "ProductID");
                 });
 
             migrationBuilder.CreateTable(
@@ -123,6 +143,21 @@ namespace HempPlantationsDatabase.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Purchases", x => x.PurchaseID);
+                    table.ForeignKey(
+                        name: "FK_Purchases_AgronomistID",
+                        column: x => x.AgronomistID,
+                        principalTable: "Agronomists",
+                        principalColumn: "AgronomistID");
+                    table.ForeignKey(
+                        name: "FK_Purchases_ProductID",
+                        column: x => x.ProductID,
+                        principalTable: "Products",
+                        principalColumn: "ProductID");
+                    table.ForeignKey(
+                        name: "FK_Purchases_ConsumerID",
+                        column: x => x.ConsumerID,
+                        principalTable: "Consumers",
+                        principalColumn: "ConsumerID");
                 });
 
             migrationBuilder.CreateTable(
@@ -140,6 +175,21 @@ namespace HempPlantationsDatabase.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Returns", x => x.ReturnID);
+                    table.ForeignKey(
+                        name: "FK_Returns_AgronomistID",
+                        column: x => x.AgronomistID,
+                        principalTable: "Agronomists",
+                        principalColumn: "AgronomistID");
+                    table.ForeignKey(
+                        name: "FK_Returns_ProductID",
+                        column: x => x.ProductID,
+                        principalTable: "Products",
+                        principalColumn: "ProductID");
+                    table.ForeignKey(
+                        name: "FK_Returns_ConsumerID",
+                        column: x => x.ConsumerID,
+                        principalTable: "Consumers",
+                        principalColumn: "ConsumerID");
                 });
 
             migrationBuilder.CreateTable(
@@ -157,6 +207,16 @@ namespace HempPlantationsDatabase.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Reviews", x => x.ReviewID);
+                    table.ForeignKey(
+                        name: "FK_Reviews_AgronomistID",
+                        column: x => x.AgronomistID,
+                        principalTable: "Agronomists",
+                        principalColumn: "AgronomistID");
+                    table.ForeignKey(
+                        name: "FK_Reviews_ConsumerID",
+                        column: x => x.ConsumerID,
+                        principalTable: "Consumers",
+                        principalColumn: "ConsumerID");
                 });
 
             migrationBuilder.CreateTable(
@@ -171,6 +231,16 @@ namespace HempPlantationsDatabase.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_TastingReviews", x => x.TastingReviewID);
+                    table.ForeignKey(
+                        name: "FK_TastingReviews_TastingID",
+                        column: x => x.TastingID,
+                        principalTable: "Tastings",
+                        principalColumn: "TastingID");
+                    table.ForeignKey(
+                        name: "FK_TastingReviews_ReviewsID",
+                        column: x => x.ReviewID,
+                        principalTable: "Reviews",
+                        principalColumn: "ReviewsID");
                 });
 
             migrationBuilder.CreateTable(
@@ -188,6 +258,21 @@ namespace HempPlantationsDatabase.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Tastings", x => x.TastingID);
+                    table.ForeignKey(
+                        name: "FK_Tastings_AgronomistID",
+                        column: x => x.AgronomistID,
+                        principalTable: "Agronomists",
+                        principalColumn: "AgronomistID");
+                    table.ForeignKey(
+                        name: "FK_Tastings_ProductID",
+                        column: x => x.ProductID,
+                        principalTable: "Products",
+                        principalColumn: "ProductID");
+                    table.ForeignKey(
+                        name: "FK_Tastings_ConsumerID",
+                        column: x => x.ConsumerID,
+                        principalTable: "Consumers",
+                        principalColumn: "ConsumerID");
                 });
 
             migrationBuilder.CreateTable(
@@ -202,6 +287,16 @@ namespace HempPlantationsDatabase.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_TravelAssignments", x => x.TravelAssignmentID);
+                    table.ForeignKey(
+                        name: "FK_TravelAssignments_TripID",
+                        column: x => x.TripID,
+                        principalTable: "Trips",
+                        principalColumn: "TripID");
+                    table.ForeignKey(
+                        name: "FK_TravelAssignments_AgronomistID",
+                        column: x => x.AgronomistID,
+                        principalTable: "Agronomists",
+                        principalColumn: "AgronomistID");
                 });
 
             migrationBuilder.CreateTable(
@@ -218,6 +313,16 @@ namespace HempPlantationsDatabase.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Trips", x => x.TripID);
+                    table.ForeignKey(
+                        name: "FK_Trips_AgronomistID",
+                        column: x => x.AgronomistID,
+                        principalTable: "Agronomists",
+                        principalColumn: "AgronomistID");
+                    table.ForeignKey(
+                        name: "FK_Trips_HarvetsID",
+                        column: x => x.HarvestID,
+                        principalTable: "Harvests",
+                        principalColumn: "HarvestID");
                 });
         }
 
