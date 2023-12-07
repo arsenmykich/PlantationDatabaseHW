@@ -55,7 +55,7 @@ namespace HempPlantationsDatabase.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     AgronomistID = table.Column<int>(type: "integer", nullable: false),
                     VarietyID = table.Column<int>(type: "integer", nullable: false),
-                    HarvestDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    HarvestDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     Quantity = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>

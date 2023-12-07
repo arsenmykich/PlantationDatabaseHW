@@ -1,7 +1,43 @@
-﻿
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <li class="list-group-item">
+        <a href="@Url.Action("Create", "Harvests")" class="btn btn-primary">Create Harvest</a>
+    </li>
+    <li class="list-group-item">
+        <a href="@Url.Action("Create", "Tastings")" class="btn btn-primary">Create Tasting</a>
+    </li>
+    <li class="list-group-item">
+        <a href="@Url.Action("Create", "Purchases")" class="btn btn-primary">Create Purchase</a>
+    </li>
+    <li class="list-group-item">
+        <a href="@Url.Action("Create", "Returns")" class="btn btn-primary">Create Return</a>
+    </li>
+    <li class="list-group-item">
+        <a href="@Url.Action("Create", "Trips")" class="btn btn-primary">Create new Trip</a>
+    </li
+    <li class="list-group-item">
+        <a href="@Url.Action("Create", "Reviews")" class="btn btn-primary">Create new review</a>
+    </li>
+    
+    <li class="list-group-item">
+        <a href="@Url.Action("InputDataDistinctCustomers", "Home")" class="btn btn-primary">ShowDistinctConsumers</a>
+    </li>    
+@*     <li class="list-group-item">
+        <a href="@Url.Action("ProductsPurchasedByConsumerC", "Home")" class="btn btn-primary">ProductsPurchasedByConsumerC</a>
+    </li>  *@
+    
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<a asp-controller="Home" asp-action="ProductsPurchasedByConsumer" asp-route-consumerId=1>Show Products Purchased by Consumer C</a>
 
-</div>
+
+
+</body>
+</html>

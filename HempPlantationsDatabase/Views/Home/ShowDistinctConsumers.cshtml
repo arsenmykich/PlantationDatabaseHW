@@ -1,0 +1,19 @@
+﻿@model IEnumerable<int>
+
+<h1>Distinct Customers</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Customer ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customerId in Model)
+        {
+            <tr>
+                <td>@customerId</td>
+            </tr>
+        }
+    </tbody>
+</table>

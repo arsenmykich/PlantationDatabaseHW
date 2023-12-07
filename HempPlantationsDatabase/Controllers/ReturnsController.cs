@@ -1,6 +1,8 @@
 ﻿using databaseHempPlantations.Models;
 using HempPlantationsDatabase.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
 namespace HempPlantationsDatabase.Controllers
@@ -28,6 +30,33 @@ namespace HempPlantationsDatabase.Controllers
             });
 
             return View(returns);
+        }
+
+
+        public IActionResult Create()
+        {
+            // You can customize this based on your actual model and context
+            ViewData["AgronomistID"] = new SelectList(context.Agronomists, "AgronomistID", "AgronomistID");
+            ViewData["ConsumerID"] = new SelectList(context.Consumers, "ConsumerID", "ConsumerID");
+            ViewData["ProductID"] = new SelectList(context.Products, "ProductID", "ProductID");
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("ReturnID,AgronomistID,ConsumerID,ProductID,ReturnDate,Quantity")] Return returnItem)
+        {
+            context.Returns.Add(returnItem);
+            await context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+
+
+            // You can customize this based on your actual model and context
+            ViewData["AgronomistID"] = new SelectList(context.Agronomists, "AgronomistID", "AgronomistID", returnItem.AgronomistID);
+            ViewData["ConsumerID"] = new SelectList(context.Consumers, "ConsumerID", "ConsumerID", returnItem.ConsumerID);
+            ViewData["ProductID"] = new SelectList(context.Products, "ProductID", "ProductID", returnItem.ProductID);
+
+            return View(returnItem);
         }
     }
 }

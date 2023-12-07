@@ -1,0 +1,21 @@
+﻿
+<form method="post">
+    <label for="agronomID">Agronomist ID:</label>
+    <input type="text" id="agronomID" name="agronomID" required />
+    
+    <label for="n">Value of N:</label>
+    <input type="text" id="n" name="n" required />
+
+        @{
+    var agronomID = 1; // Replace with actual agronomist ID
+
+    var n = 1; // Replace with actual value of N
+}
+
+
+<a asp-action="ShowDistinctConsumers" asp-controller="Home" asp-route-agronomID="@agronomID" asp-route-n="@n" class="btn btn-primary">Show Distinct Customers</a>
+
+</form>
+    
+    
+

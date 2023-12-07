@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Programming\\DataBaseProject\\HempPlantationsDatabase\\HempPlantationsDatabase.csproj": {}
+    "D:\\cpp\\000 cs\\0 1univer\\01 DB project\\WebApplication1\\HempPlantationsDatabase\\HempPlantationsDatabase.csproj": {}
   },
   "projects": {
-    "D:\\Programming\\DataBaseProject\\HempPlantationsDatabase\\HempPlantationsDatabase.csproj": {
+    "D:\\cpp\\000 cs\\0 1univer\\01 DB project\\WebApplication1\\HempPlantationsDatabase\\HempPlantationsDatabase.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Programming\\DataBaseProject\\HempPlantationsDatabase\\HempPlantationsDatabase.csproj",
+        "projectUniqueName": "D:\\cpp\\000 cs\\0 1univer\\01 DB project\\WebApplication1\\HempPlantationsDatabase\\HempPlantationsDatabase.csproj",
         "projectName": "HempPlantationsDatabase",
-        "projectPath": "D:\\Programming\\DataBaseProject\\HempPlantationsDatabase\\HempPlantationsDatabase.csproj",
-        "packagesPath": "C:\\Users\\cagal\\.nuget\\packages\\",
-        "outputPath": "D:\\Programming\\DataBaseProject\\HempPlantationsDatabase\\obj\\",
+        "projectPath": "D:\\cpp\\000 cs\\0 1univer\\01 DB project\\WebApplication1\\HempPlantationsDatabase\\HempPlantationsDatabase.csproj",
+        "packagesPath": "C:\\Users\\arsen\\.nuget\\packages\\",
+        "outputPath": "D:\\cpp\\000 cs\\0 1univer\\01 DB project\\WebApplication1\\HempPlantationsDatabase\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\cagal\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\arsen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

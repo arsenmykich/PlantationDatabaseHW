@@ -1,0 +1,39 @@
+﻿@model databaseHempPlantations.Models.Harvest
+
+<h1>Create Harvest</h1>
+
+<form asp-action="Create" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="AgronomistID" class="control-label">Agronomist ID</label>
+        <select asp-for="AgronomistID" class="form-control" asp-items="ViewBag.AgronomistID"></select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="VarietyID" class="control-label">Variety ID</label>
+        <select asp-for="VarietyID" class="form-control" asp-items="ViewBag.VarietyID"></select>
+    </div>
+
+@*     <div class="form-group">
+        <label asp-for="HarvestDate" class="control-label">Harvest Date</label>
+        <input asp-for="HarvestDate" type="datetime-local" class="form-control" value="@DateTime.UtcNow" />
+        <span asp-validation-for="HarvestDate" class="text-danger"></span>
+    </div> *@
+
+    <div class="form-group">
+        <label asp-for="Quantity" class="control-label">Quantity</label>
+        <input asp-for="Quantity" class="form-control" />
+        <span asp-validation-for="Quantity" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+</form>
+
+<a asp-action="Index">Back to List</a>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

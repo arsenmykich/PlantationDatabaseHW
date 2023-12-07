@@ -1,6 +1,8 @@
 ﻿using databaseHempPlantations.Models;
 using HempPlantationsDatabase.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
 namespace HempPlantationsDatabase.Controllers
@@ -28,6 +30,31 @@ namespace HempPlantationsDatabase.Controllers
             });
 
             return View(reviews);
+        }
+
+        public IActionResult Create()
+        {
+            // You can customize this based on your actual model and context
+            ViewData["ConsumerID"] = new SelectList(context.Consumers, "ConsumerID", "ConsumerID");
+            ViewData["AgronomistID"] = new SelectList(context.Agronomists, "AgronomistID", "AgronomistID");
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("ReviewID,ConsumerID,AgronomistID,ReviewDate,Rating,Comment")] Review review)
+        {
+
+            context.Reviews.Add(review);
+            await context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+
+
+            // You can customize this based on your actual model and context
+            ViewData["ConsumerID"] = new SelectList(context.Consumers, "ConsumerID", "ConsumerID", review.ConsumerID);
+            ViewData["AgronomistID"] = new SelectList(context.Agronomists, "AgronomistID", "AgronomistID", review.AgronomistID);
+
+            return View(review);
         }
     }
 }

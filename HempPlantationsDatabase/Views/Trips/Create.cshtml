@@ -1,0 +1,33 @@
+﻿@model databaseHempPlantations.Models.Trip
+
+<h1>Create Trip</h1>
+
+<form asp-action="Create" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="AgronomistID" class="control-label">Agronomist ID</label>
+        <select asp-for="AgronomistID" class="form-control" asp-items="ViewBag.AgronomistID"></select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="HarvestID" class="control-label">Harvest ID</label>
+        <select asp-for="HarvestID" class="form-control" asp-items="ViewBag.HarvestID"></select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Destination" class="control-label">Destination</label>
+        <input asp-for="Destination" class="form-control" />
+        <span asp-validation-for="Destination" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+</form>
+
+<a asp-action="Index">Back to List</a>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
