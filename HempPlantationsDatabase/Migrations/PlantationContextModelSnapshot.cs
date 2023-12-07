@@ -365,12 +365,12 @@ namespace HempPlantationsDatabase.Migrations
 
             modelBuilder.Entity<Harvest>(b =>
             {
-                b.HasOne<HempVariety>(h => h.HempVarieties)
+                b.HasOne<HempVariety>(h => h.HempVariety)
                     .WithMany()
                     .HasForeignKey(h => h.VarietyID)
                     .OnDelete(DeleteBehavior.Cascade);
 
-                b.HasOne<Agronomist>(h => h.Agronomisties)
+                b.HasOne<Agronomist>(h => h.Agronomist)
                     .WithMany()
                     .HasForeignKey(h => h.AgronomistID)
                     .OnDelete(DeleteBehavior.Cascade);
@@ -378,12 +378,12 @@ namespace HempPlantationsDatabase.Migrations
 
             modelBuilder.Entity<TravelAssignment>(b =>
             {
-                b.HasOne<Trip>(h => h.Tripies)
+                b.HasOne<Trip>(h => h.Trip)
                     .WithMany()
                     .HasForeignKey(h => h.TripID)
                     .OnDelete(DeleteBehavior.Cascade);
 
-                b.HasOne<Agronomist>(h => h.Agronomisties)
+                b.HasOne<Agronomist>(h => h.Agronomist)
                     .WithMany()
                     .HasForeignKey(h => h.AgronomistID)
                     .OnDelete(DeleteBehavior.Cascade);
@@ -391,12 +391,12 @@ namespace HempPlantationsDatabase.Migrations
 
             modelBuilder.Entity<Trip>(b =>
             {
-                b.HasOne<Harvest>(h => h.Harvesties)
+                b.HasOne<Harvest>(h => h.Harvest)
                     .WithMany()
                     .HasForeignKey(h => h.HarvestID)
                     .OnDelete(DeleteBehavior.Cascade);
 
-                b.HasOne<Agronomist>(h => h.Agronomisties)
+                b.HasOne<Agronomist>(h => h.Agronomist)
                     .WithMany()
                     .HasForeignKey(h => h.AgronomistID)
                     .OnDelete(DeleteBehavior.Cascade);
@@ -404,12 +404,12 @@ namespace HempPlantationsDatabase.Migrations
 
             modelBuilder.Entity<TastingReview>(b =>
             {
-                b.HasOne<Review>(h => h.Reviewies)
+                b.HasOne<Review>(h => h.Review)
                     .WithMany()
                     .HasForeignKey(h => h.ReviewID)
                     .OnDelete(DeleteBehavior.Cascade);
 
-                b.HasOne<Tasting>(h => h.Tastingies)
+                b.HasOne<Tasting>(h => h.Tasting)
                     .WithMany()
                     .HasForeignKey(h => h.TastingID)
                     .OnDelete(DeleteBehavior.Cascade);
@@ -417,12 +417,12 @@ namespace HempPlantationsDatabase.Migrations
 
             modelBuilder.Entity<Review>(b =>
             {
-                b.HasOne<Consumer>(h => h.Consumeries)
+                b.HasOne<Consumer>(h => h.Consumer)
                     .WithMany()
                     .HasForeignKey(h => h.ConsumerID)
                     .OnDelete(DeleteBehavior.Cascade);
 
-                b.HasOne<Agronomist>(h => h.Agronomisties)
+                b.HasOne<Agronomist>(h => h.Agronomist)
                     .WithMany()
                     .HasForeignKey(h => h.AgronomistID)
                     .OnDelete(DeleteBehavior.Cascade);
@@ -430,17 +430,17 @@ namespace HempPlantationsDatabase.Migrations
 
             modelBuilder.Entity<Tasting>(b =>
             {
-                b.HasOne<Consumer>(h => h.Consumeries)
+                b.HasOne<Consumer>(h => h.Consumer)
                     .WithMany()
                     .HasForeignKey(h => h.ConsumerID)
                     .OnDelete(DeleteBehavior.Cascade);
 
-                b.HasOne<Agronomist>(h => h.Agronomisties)
+                b.HasOne<Agronomist>(h => h.Agronomist)
                     .WithMany()
                     .HasForeignKey(h => h.AgronomistID)
                     .OnDelete(DeleteBehavior.Cascade);
 
-                b.HasOne<Product>(h => h.Producties)
+                b.HasOne<Product>(h => h.Product)
                     .WithMany()
                     .HasForeignKey(h => h.ProductID)
                     .OnDelete(DeleteBehavior.Cascade);
@@ -448,12 +448,12 @@ namespace HempPlantationsDatabase.Migrations
 
             modelBuilder.Entity<HarvestProduct>(b =>
             {
-                b.HasOne<Harvest>(h => h.Harvesties)
+                b.HasOne<Harvest>(h => h.Harvest)
                     .WithMany()
                     .HasForeignKey(h => h.HarvestID)
                     .OnDelete(DeleteBehavior.Cascade);
 
-                b.HasOne<Product>(h => h.Producties)
+                b.HasOne<Product>(h => h.Product)
                     .WithMany()
                     .HasForeignKey(h => h.ProductID)
                     .OnDelete(DeleteBehavior.Cascade);
@@ -461,17 +461,17 @@ namespace HempPlantationsDatabase.Migrations
 
             modelBuilder.Entity<Return>(b =>
             {
-                b.HasOne<Consumer>(h => h.Consumeries)
+                b.HasOne<Consumer>(h => h.Consumer)
                     .WithMany()
                     .HasForeignKey(h => h.ConsumerID)
                     .OnDelete(DeleteBehavior.Cascade);
 
-                b.HasOne<Agronomist>(h => h.Agronomisties)
+                b.HasOne<Agronomist>(h => h.Agronomist)
                     .WithMany()
                     .HasForeignKey(h => h.AgronomistID)
                     .OnDelete(DeleteBehavior.Cascade);
 
-                b.HasOne<Product>(h => h.Producties)
+                b.HasOne<Product>(h => h.Product)
                     .WithMany()
                     .HasForeignKey(h => h.ProductID)
                     .OnDelete(DeleteBehavior.Cascade);
@@ -479,17 +479,17 @@ namespace HempPlantationsDatabase.Migrations
 
             modelBuilder.Entity<Purchase>(b =>
             {
-                b.HasOne<Consumer>(h => h.Consumeries)
+                b.HasOne<Consumer>(h => h.Consumer)
                     .WithMany()
                     .HasForeignKey(h => h.ConsumerID)
                     .OnDelete(DeleteBehavior.Cascade);
 
-                b.HasOne<Agronomist>(h => h.Agronomisties)
+                b.HasOne<Agronomist>(h => h.Agronomist)
                     .WithMany()
                     .HasForeignKey(h => h.AgronomistID)
                     .OnDelete(DeleteBehavior.Cascade);
 
-                b.HasOne<Product>(h => h.Producties)
+                b.HasOne<Product>(h => h.Product)
                     .WithMany()
                     .HasForeignKey(h => h.ProductID)
                     .OnDelete(DeleteBehavior.Cascade);
