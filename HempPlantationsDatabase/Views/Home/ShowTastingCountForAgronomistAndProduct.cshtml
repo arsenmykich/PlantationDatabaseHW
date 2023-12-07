@@ -1,0 +1,24 @@
+﻿@model IEnumerable<object>
+
+<h1>Tasting Count for Agronomist and Product</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Agronomist ID</th>
+            <th>Product ID</th>
+            <th>Tasting Count</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item</td>
+                @* <td>@item.AgronomID</td>
+                <td>@item.ProductID</td>
+                <td>@item.TastingCount</td> *@
+            </tr>
+        }
+    </tbody>
+</table>

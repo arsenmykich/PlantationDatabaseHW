@@ -27,16 +27,116 @@
         <a href="@Url.Action("Create", "Reviews")" class="btn btn-primary">Create new review</a>
     </li>
     
+    
+    
+    @*1*@
     <li class="list-group-item">
         <a href="@Url.Action("InputDataDistinctCustomers", "Home")" class="btn btn-primary">ShowDistinctConsumers</a>
     </li>    
 @*     <li class="list-group-item">
         <a href="@Url.Action("ProductsPurchasedByConsumerC", "Home")" class="btn btn-primary">ProductsPurchasedByConsumerC</a>
     </li>  *@
-    
+    @*2*@
+    <form asp-action="ShowProductsPurchasedByConsumer" asp-controller="Home" method="post">
+        <label for="consumerID">Consumer ID:</label>
+        <input type="text" id="consumerID" name="consumerID" required />
 
+        <button type="submit">Show Products Purchased</button>
+    </form>
+
+
+    @*3*@
+    <form asp-action="ShowAgronomistsForConsumer" asp-controller="Home" method="post">
+    <label for="consumerID">Consumer ID:</label>
+    <input type="text" id="consumerID" name="consumerID" required />
+
+    <label for="n">Value of N:</label>
+    <input type="text" id="n" name="n" required />
+
+    <button type="submit">Show Agronomists</button>
+    </form>
+
+    @*4*@
+    <form asp-action="ShowAgronomistsForTravelAssignments" asp-controller="Home" method="post">
+    <label for="agronomID">Agronomist ID:</label>
+    <input type="text" id="agronomID" name="agronomID" required />
+
+    <button type="submit">Show Agronomists</button>
+    </form>
+
+
+    @*5*@
+    <form asp-action="ShowAgronomistsForConsumer2" asp-controller="Home" method="post">
+    <label for="consumerID">Consumer ID:</label>
+    <input type="text" id="consumerID" name="consumerID" required />
+
+    <button type="submit">Show Agronomists</button>
+    </form>
+
+    @*6*@
+    <form asp-action="ShowConsumersWithDistinctProducts" asp-controller="Home" method="post">
+    <label for="n">Value of N:</label>
+    <input type="text" id="n" name="n" required />
+
+    <button type="submit">Show Consumers</button>
+    </form>
+
+    @*7*@
+    <form asp-action="ShowAgronomistsWithDistinctHempSorts" asp-controller="Home" method="post">
+    <label for="n">Value of N:</label>
+    <input type="text" id="n" name="n" required />
+
+    <button type="submit">Show Agronomists</button>
+    </form>
+
+    @*8*@
+    <form asp-action="ShowCommonTastings" asp-controller="Home" method="post">
+    <label for="consumerID">Consumer ID:</label>
+    <input type="text" id="consumerID" name="consumerID" required />
+
+    <label for="agronomID">Agronomist ID:</label>
+    <input type="text" id="agronomID" name="agronomID" required />
+
+    <button type="submit">Show Common Tastings</button>
+    </form>
+    @*9*@
+    <form asp-action="ShowTastingCountForAgronomistAndProduct" asp-controller="Home" method="post">
+    <label for="agronomID">Agronomist ID:</label>
+    <input type="text" id="agronomID" name="agronomID" required />
+
+    <label for="n">Value of N:</label>
+    <input type="text" id="n" name="n" required />
+
+    <button type="submit">Show Tasting Count</button>
+    </form>
+    @*10*@
+    <form asp-action="ShowReviewCountByMonth" asp-controller="Home" method="post">
+    <label for="customerID">Customer ID:</label>
+    <input type="text" id="customerID" name="customerID" required />
+
+    <button type="submit">Show Review Count</button>
+    </form>
+    @*11*@
+    <form asp-action="ShowHempSortsByAvgTravelCount" asp-controller="Home" method="post">
+    <label for="n">Value of N:</label>
+    <input type="text" id="n" name="n" required />
+
+    <button type="submit">Show Hemp Sorts</button>
+    </form>
+    @*12*@
+    <form asp-action="ShowProductsByReturnPercentage" asp-controller="Home" method="post">
+    <label for="n">Value of N:</label>
+    <input type="text" id="n" name="n" required />
+
+    <button type="submit">Show Products</button>
+</form>
+
+
+
+
+@* 
 <a asp-controller="Home" asp-action="ProductsPurchasedByConsumer" asp-route-consumerId=1>Show Products Purchased by Consumer C</a>
-
+ *@
 
 
 </body>

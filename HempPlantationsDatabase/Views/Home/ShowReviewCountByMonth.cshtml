@@ -1,0 +1,21 @@
+﻿@model IEnumerable<ReviewCountViewModel>
+
+<h1>Review Count by Month</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Review Month</th>
+            <th>Review Count</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ReviewMonth</td>
+                <td>@item.ReviewCount</td>
+            </tr>
+        }
+    </tbody>
+</table>

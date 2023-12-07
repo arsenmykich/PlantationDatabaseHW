@@ -1,0 +1,21 @@
+﻿@model IEnumerable<HempSortAvgTravelCountViewModel>
+
+<h1>Hemp Sorts by Avg Travel Count</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Hemp Sort</th>
+            <th>Avg Travel Count</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.HempSort</td>
+                <td>@item.AvgTravelCount</td>
+            </tr>
+        }
+    </tbody>
+</table>

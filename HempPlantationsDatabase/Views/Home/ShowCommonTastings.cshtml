@@ -1,0 +1,19 @@
+﻿@model IEnumerable<int>
+
+<h1>Common Tastings</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Tasting ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var tastingId in Model)
+        {
+            <tr>
+                <td>@tastingId</td>
+            </tr>
+        }
+    </tbody>
+</table>

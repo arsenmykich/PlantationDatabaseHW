@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HempPlantationsDatabase")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e572e1c22f6ad70f44e7cac1f9fcbbe0cc51f933")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e5b3ac634a42c83bf95b6de95b691cf7851d20f1")]
 [assembly: System.Reflection.AssemblyProductAttribute("HempPlantationsDatabase")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HempPlantationsDatabase")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -58,16 +58,56 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/cpp/000 cs/0 1univer/01 DB project/WebApplication1/HempPlantationsDatabase/Views/Home/ProductsPurchasedByConsumerC.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcm9kdWN0c1B1cmNoYXNlZEJ5Q29uc3VtZXJDLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/cpp/000 cs/0 1univer/01 DB project/WebApplication1/HempPlantationsDatabase/Views/Home/Schema.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTY2hlbWEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/cpp/000 cs/0 1univer/01 DB project/WebApplication1/HempPlantationsDatabase/Views/Home/ShowAgronomistsForConsumer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTaG93QWdyb25vbWlzdHNGb3JDb25zdW1lci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/cpp/000 cs/0 1univer/01 DB project/WebApplication1/HempPlantationsDatabase/Views/Home/ShowAgronomistsForConsumer2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTaG93QWdyb25vbWlzdHNGb3JDb25zdW1lcjIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/cpp/000 cs/0 1univer/01 DB project/WebApplication1/HempPlantationsDatabase/Views/Home/ShowAgronomistsForTravelAssignments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTaG93QWdyb25vbWlzdHNGb3JUcmF2ZWxBc3NpZ25tZW50cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/cpp/000 cs/0 1univer/01 DB project/WebApplication1/HempPlantationsDatabase/Views/Home/ShowAgronomistsWithDistinctHempSorts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTaG93QWdyb25vbWlzdHNXaXRoRGlzdGluY3RIZW1wU29ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/cpp/000 cs/0 1univer/01 DB project/WebApplication1/HempPlantationsDatabase/Views/Home/ShowCommonTastings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTaG93Q29tbW9uVGFzdGluZ3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/cpp/000 cs/0 1univer/01 DB project/WebApplication1/HempPlantationsDatabase/Views/Home/ShowConsumersWithDistinctProducts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTaG93Q29uc3VtZXJzV2l0aERpc3RpbmN0UHJvZHVjdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/cpp/000 cs/0 1univer/01 DB project/WebApplication1/HempPlantationsDatabase/Views/Home/ShowDistinctConsumers.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTaG93RGlzdGluY3RDb25zdW1lcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/cpp/000 cs/0 1univer/01 DB project/WebApplication1/HempPlantationsDatabase/Views/Home/ShowHempSortsByAvgTravelCount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTaG93SGVtcFNvcnRzQnlBdmdUcmF2ZWxDb3VudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/cpp/000 cs/0 1univer/01 DB project/WebApplication1/HempPlantationsDatabase/Views/Home/ShowProductsByReturnPercentage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTaG93UHJvZHVjdHNCeVJldHVyblBlcmNlbnRhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/cpp/000 cs/0 1univer/01 DB project/WebApplication1/HempPlantationsDatabase/Views/Home/ShowProductsPurchasedByConsumer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTaG93UHJvZHVjdHNQdXJjaGFzZWRCeUNvbnN1bWVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/cpp/000 cs/0 1univer/01 DB project/WebApplication1/HempPlantationsDatabase/Views/Home/ShowReviewCountByMonth.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTaG93UmV2aWV3Q291bnRCeU1vbnRoLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/cpp/000 cs/0 1univer/01 DB project/WebApplication1/HempPlantationsDatabase/Views/Home/ShowTastingCountForAgronomistAndProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTaG93VGFzdGluZ0NvdW50Rm9yQWdyb25vbWlzdEFuZFByb2R1Y3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/cpp/000 cs/0 1univer/01 DB project/WebApplication1/HempPlantationsDatabase/Views/Products/Index.cshtml]
