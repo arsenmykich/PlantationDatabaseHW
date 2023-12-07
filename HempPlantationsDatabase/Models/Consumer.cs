@@ -1,7 +1,10 @@
-﻿namespace databaseHempPlantations.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace databaseHempPlantations.Models
 {
     public class Consumer
     {
+        [Key]
         public int ConsumerID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

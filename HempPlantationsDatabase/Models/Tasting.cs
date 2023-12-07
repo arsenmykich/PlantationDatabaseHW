@@ -1,16 +1,22 @@
-﻿namespace databaseHempPlantations.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace databaseHempPlantations.Models
 {
     public class Tasting
     {
+        [Key]
         public int TastingID { get; set; }
         public int AgronomistID { get; set; }
         public int ConsumerID { get; set; }
         public int ProductID { get; set; }
         public DateTime TastingDate { get; set; }
         public int Rating { get; set; }
-
-        public virtual Consumer Consumeries { get; set; }
-        public virtual Agronomist Agronomisties { get; set; }
-        public virtual Product Producties { get; set; }
+        [ForeignKey("ConsumerID")]
+        public virtual Consumer Consumer { get; set; }
+        [ForeignKey("AgronomistID")]
+        public virtual Agronomist Agronomist { get; set; }
+        [ForeignKey("ProductID")]
+        public virtual Product Product { get; set; }
     }
 }

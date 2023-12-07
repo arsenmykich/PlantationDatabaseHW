@@ -22,7 +22,6 @@ namespace HempPlantationsDatabase.Controllers
                 HarvestID = hp.HarvestID,
                 ProductID = hp.ProductID,
                 Quantity = hp.Quantity
-                // Add other fields as needed
             });
 
             return View(harvestProducts);

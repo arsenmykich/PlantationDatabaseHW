@@ -1,13 +1,19 @@
-﻿namespace databaseHempPlantations.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace databaseHempPlantations.Models
 {
     public class Harvest
     {
+        [Key]
         public int HarvestID { get; set; }
         public int AgronomistID { get; set; }
         public int VarietyID { get; set; }
         public DateTime HarvestDate { get; set; }
         public int Quantity { get; set; }
-        public virtual HempVariety HempVarieties { get; set; }
-        public virtual Agronomist Agronomisties { get; set; }
+        [ForeignKey("VarietyID")]
+        public virtual HempVariety HempVariety { get; set; }
+        [ForeignKey("AgronomistID")]
+        public virtual Agronomist Agronomist { get; set; }
     }
 }
