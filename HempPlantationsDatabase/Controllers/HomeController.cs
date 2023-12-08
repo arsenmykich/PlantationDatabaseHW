@@ -42,33 +42,17 @@ namespace HempPlantationsDatabase.Controllers
             return View();
         }
         //1
-        public IActionResult ShowDistinctConsumers(int agronomID, int n)
+        public IActionResult ShowDistinctConsumers(int agronomID, int n ,DateTime from_date, DateTime to_date)
         {
-            var distinctCustomers = context.Purchases
-                .Where(p => p.AgronomistID == agronomID)
+            var distinctCustomerIds = context.Purchases
+                .Where(p => p.AgronomistID == agronomID && p.PurchaseDate >= from_date && p.PurchaseDate <= to_date)
                 .GroupBy(p => p.ConsumerID)
                 .Where(g => g.Count() >= n)
                 .Select(g => g.Key)
-                .Distinct();
-            //        var distinctCustomerIds = context.Purchases
-            //.Where(p => p.AgronomistID == agronomID )
-            //.GroupBy(p => p.ConsumerID)
-            //.Where(g => g.Count() >= n)
-            //.Select(g => g.Key)
-            //.ToList();
-            //        var consumerDetails = context.Consumers
-            //.Where(c => distinctCustomerIds.Contains(c.ConsumerID))
-            //.Select(c => new { c.ConsumerID, c.FirstName, c.LastName })
-            //.ToList();
+                .ToList();
 
-            //Console.WriteLine(agronomID);
-            //Console.WriteLine(n);
-
-
-            //        return View(consumerDetails.ToList());
-            return View(distinctCustomers.ToList());
+            return View(distinctCustomerIds.ToList());
         }
-
 
         ////2
         //public IActionResult ProductsPurchasedByConsumerC(int consumerId)

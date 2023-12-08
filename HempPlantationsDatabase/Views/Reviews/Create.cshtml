@@ -1,18 +1,24 @@
 ﻿@model databaseHempPlantations.Models.Review
 
-<h1>Create Review</h1>
+<h1>Event 6</h1>
 
 <form asp-action="Create" method="post">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
     <div class="form-group">
-        <label asp-for="ConsumerID" class="control-label">Consumer ID</label>
+        <label asp-for="ConsumerID" class="control-label">Consumer</label>
         <select asp-for="ConsumerID" class="form-control" asp-items="ViewBag.ConsumerID"></select>
     </div>
 
     <div class="form-group">
-        <label asp-for="AgronomistID" class="control-label">Agronomist ID</label>
+        <label asp-for="AgronomistID" class="control-label">Agronomist</label>
         <select asp-for="AgronomistID" class="form-control" asp-items="ViewBag.AgronomistID"></select>
+    </div>
+
+    <div class="form-group">
+        <label for="date">Date:</label>
+        <input type="datetime" id="date" name="ReviewDate" required />
+        <label>Вводити у такому форматі(скопіюйте та змініть) - 2019-05-08T12:00:00+03:00</label>
     </div>
 
     <div class="form-group">
