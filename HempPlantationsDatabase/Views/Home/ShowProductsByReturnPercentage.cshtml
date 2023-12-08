@@ -1,25 +1,62 @@
 ﻿@model IEnumerable<ProductPurchaseViewModel>
 
-<h1>Products by Return Percentage</h1>
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>Product ID</th>
-            <th>Customer Count</th>
-            <th>Return Customer Count</th>
-            <th>Return Percentage</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var product in Model)
-        {
-            <tr>
-                <td>@product.ProductID</td>
-                <td>@product.CustomerCount</td>
-                <td>@product.ReturnCustomerCount</td>
-                <td>@product.ReturnPercentage.ToString("0.00")%</td>
-            </tr>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products by Return Percentage</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
         }
-    </tbody>
-</table>
+
+        h1 {
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Products by Return Percentage</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Customer Count</th>
+                <th>Return Customer Count</th>
+                <th>Return Percentage</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model)
+            {
+                <tr>
+                    <td>@product.ProductID</td>
+                    <td>@product.CustomerCount</td>
+                    <td>@product.ReturnCustomerCount</td>
+                    <td>@product.ReturnPercentage.ToString("0.00")%</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a asp-action="Index">Back to Main Menu</a>
+</body>
+</html>

@@ -66,161 +66,155 @@ namespace HempPlantationsDatabase.Controllers
         //    ViewData["ConsumerId"] = consumerId; // Pass consumerId to the view for display
         //    return View(products);
         //}
-        //2
-        public IActionResult ShowProductsPurchasedByConsumer(int consumerID)
+        //2 upd
+        public IActionResult ShowProductsPurchasedByConsumer(int consumerID, DateTime from_date_products, DateTime to_date_products)
         {
-            var products = context.Purchases
-                .Where(p => p.ConsumerID == consumerID)
+            var purchasedProductIds = context.Purchases
+                .Where(p => p.ConsumerID == consumerID && p.PurchaseDate >= from_date_products && p.PurchaseDate <= to_date_products)
                 .Select(p => p.ProductID)
-                .Distinct()
                 .ToList();
 
-            return View(products);
+            return View(purchasedProductIds);
         }
 
-        //3
-        public IActionResult ShowAgronomistsForConsumer(int consumerID, int n)
+
+        //3 upd
+        public IActionResult ShowAgronomistsForConsumer(int consumerID_tastings, DateTime from_date_tastings, DateTime to_date_tastings, int n_tastings)
         {
-            var agronomists = context.Tastings
-                .Where(t => t.ConsumerID == consumerID)
+            var agronomistIds = context.Tastings
+                .Where(t => t.ConsumerID == consumerID_tastings && t.TastingDate >= from_date_tastings && t.TastingDate <= to_date_tastings)
                 .GroupBy(t => t.AgronomistID)
-                .Where(g => g.Select(t => t.ProductID).Distinct().Count() >= n)
+                .Where(g => g.Count() >= n_tastings)
                 .Select(g => g.Key)
-                .Distinct()
                 .ToList();
 
-            return View(agronomists);
+            return View(agronomistIds);
         }
 
 
-        //4
-        public IActionResult ShowAgronomistsForTravelAssignments(int agronomID)
+
+        //4 upd
+        public IActionResult ShowAgronomistsTraveledWithA(int agronomID_travel, DateTime from_date_travel, DateTime to_date_travel)
         {
-            var agronomists = context.TravelAssignments
-                .Where(t => t.AgronomistID == agronomID)
+            var traveledAgronomistIds = context.Trips
+                .Where(t => t.AgronomistID == agronomID_travel && t.TripDate >= from_date_travel && t.TripDate <= to_date_travel)
                 .Select(t => t.AgronomistID)
                 .Distinct()
                 .ToList();
 
-            return View(agronomists);
+            return View(traveledAgronomistIds);
         }
+
 
         //5
-        public IActionResult ShowAgronomistsForConsumer2(int consumerID)
+        public IActionResult ShowAgronomistsForConsumerSalesAndTastings(int consumerID_sales_tastings, DateTime from_date_sales_tastings, DateTime to_date_sales_tastings)
         {
-            var agronomists = context.Tastings
-                .Where(t => t.ConsumerID == consumerID && context.Purchases.Any(p => p.ConsumerID == consumerID && p.AgronomistID == t.AgronomistID))
+            var agronomistIds = context.Tastings
+                .Where(t => t.ConsumerID == consumerID_sales_tastings && t.TastingDate >= from_date_sales_tastings && t.TastingDate <= to_date_sales_tastings
+                    && context.Purchases.Any(p => p.ConsumerID == consumerID_sales_tastings && p.AgronomistID == t.AgronomistID && p.PurchaseDate >= from_date_sales_tastings && p.PurchaseDate <= to_date_sales_tastings))
                 .Select(t => t.AgronomistID)
                 .Distinct()
                 .ToList();
 
-            return View(agronomists);
+            return View(agronomistIds);
         }
 
 
-        //6 need fix
-        public IActionResult ShowConsumersWithDistinctProducts(int n)
+
+        //6 need fix upd needs check
+        public IActionResult ShowConsumersForDistinctProductPurchases(int n_distinct_products, DateTime from_date_distinct_products, DateTime to_date_distinct_products)
         {
-            var consumers = context.Purchases
+            var consumerIds = context.Purchases
+                .Where(p => p.PurchaseDate >= from_date_distinct_products && p.PurchaseDate <= to_date_distinct_products)
                 .GroupBy(p => p.ConsumerID)
-                .Where(g => g.Select(p => p.ProductID).Distinct().Count() >= n)
+                .Where(g => g.Select(p => p.ProductID).Distinct().Count() >= n_distinct_products)
                 .Select(g => g.Key)
                 .ToList();
 
-            return View(consumers);
+            return View(consumerIds);
         }
-        //7
-        public IActionResult ShowAgronomistsWithDistinctHempSorts(int n)
+
+
+
+
+        //7 upd
+        public IActionResult ShowAgronomistsForDistinctHempVarieties(int n_distinct_hemp_varieties, DateTime from_date_distinct_hemp_varieties, DateTime to_date_distinct_hemp_varieties)
         {
-            var agronomists = context.Harvests
-                .Join(
-                    context.Agronomists,
-                    h => h.AgronomistID,
-                    a => a.AgronomistID,
-                    (h, a) => new { Harvest = h, Agronomist = a }
-                )
-                .GroupBy(x => x.Agronomist.AgronomistID)
-                .Where(g => g.Select(x => x.Harvest.VarietyID).Distinct().Count() >= n)
+            var agronomistIds = context.Harvests
+                .Where(h => h.HarvestDate >= from_date_distinct_hemp_varieties && h.HarvestDate <= to_date_distinct_hemp_varieties)
+                .GroupBy(h => h.AgronomistID)
+                .Where(g => g.Select(h => h.VarietyID).Distinct().Count() >= n_distinct_hemp_varieties)
                 .Select(g => g.Key)
                 .ToList();
 
-            return View(agronomists);
+            return View(agronomistIds);
         }
-        //8
-        public IActionResult ShowCommonTastings(int consumerID, int agronomID)
+
+        //8 upd
+        public IActionResult ShowSharedTastings(int consumer_id_shared_tastings, int agronomist_id_shared_tastings, DateTime from_date_shared_tastings, DateTime to_date_shared_tastings)
         {
-            var commonTastings = context.Tastings
-                .Where(t => t.ConsumerID == consumerID && t.AgronomistID == agronomID)
+            var sharedTastingIds = context.Tastings
+                .Where(t => t.ConsumerID == consumer_id_shared_tastings && t.AgronomistID == agronomist_id_shared_tastings && t.TastingDate >= from_date_shared_tastings && t.TastingDate <= to_date_shared_tastings)
                 .Select(t => t.TastingID)
                 .Distinct()
                 .ToList();
 
-            return View(commonTastings);
+            return View(sharedTastingIds);
         }
-        //9
-        public IActionResult ShowTastingCountForAgronomistAndProduct(int agronomID, int n)
+
+        //9 upd
+        public IActionResult ShowTastingCounts(int agronom_id_tasting_counts, DateTime from_date_tasting_counts, DateTime to_date_tasting_counts, int min_consumers_tasting_counts)
         {
             var tastingCounts = context.Tastings
-                .Where(t => t.AgronomistID == agronomID)
+                .Where(t => t.AgronomistID == agronom_id_tasting_counts && t.TastingDate >= from_date_tasting_counts && t.TastingDate <= to_date_tasting_counts)
                 .GroupBy(t => new { t.AgronomistID, t.ProductID })
-                .Where(g => g.Select(t => t.ConsumerID).Distinct().Count() >= n)
-                .Select(g => new
-                {
-                    AgronomID = g.Key.AgronomistID,
-                    ProductID = g.Key.ProductID,
-                    TastingCount = g.Select(t => t.ConsumerID).Distinct().Count()
-                })
+                .Where(g => g.Count() >= min_consumers_tasting_counts)
+                .Select(g => new { AgronomID = g.Key.AgronomistID, ProductID = g.Key.ProductID, TastingCount = g.Count() })
                 .ToList();
 
             return View(tastingCounts);
         }
-        //10
-        public IActionResult ShowReviewCountByMonth(int customerID)
+
+        //10 upd
+        public IActionResult ShowReviewCounts(int consumer_id_review_counts, DateTime from_date_review_counts, DateTime to_date_review_counts)
         {
             var reviewCounts = context.Reviews
-                .Where(r => r.ConsumerID == customerID)
+                .Where(r => r.ConsumerID == consumer_id_review_counts && r.ReviewDate >= from_date_review_counts && r.ReviewDate <= to_date_review_counts)
                 .GroupBy(r => new { ReviewMonth = r.ReviewDate.Month })
-                .Select(g => new ReviewCountViewModel
-                {
-                    ReviewMonth = g.Key.ReviewMonth,
-                    ReviewCount = g.Count()
-                })
+                .Select(g => new ReviewCountViewModel { ReviewMonth = g.Key.ReviewMonth, ReviewCount = g.Count() })
                 .ToList();
 
             return View(reviewCounts);
         }
-        //11 need fix
-        public IActionResult ShowHempSortsByAvgTravelCount(int n)
-        {
-            var hempSorts = context.Harvests
-                .GroupBy(h => h.VarietyID)
-                .Join(
-                    context.Agronomists
-                        .GroupJoin(
-                            context.TravelAssignments,
-                            a => a.AgronomistID,
-                            ta => ta.AgronomistID,
-                            (a, travelAssignments) => new
-                            {
-                                a.AgronomistID,
-                                TravelCount = travelAssignments.DistinctBy(ta => ta.TravelAssignmentID).Count()
-                            }
-                        )
-                        .Where(a => a.TravelCount >= n),
-                    h => h.First().AgronomistID,
-                    a => a.AgronomistID,
-                    (h, a) => new HempSortAvgTravelCountViewModel
-                    {
-                        HempSort = h.Key,
-                        AvgTravelCount = a.TravelCount
-                    }
-                )
-                .OrderByDescending(x => x.AvgTravelCount)
-                .ToList();
 
-            return View(hempSorts);
-        }
-        //12
+
+
+        //11 need fix(extremely)
+        //public IActionResult ShowSortedHempSorts(int n, DateTime fromDate, DateTime toDate)
+        //{
+        //    var sortedHempSorts = context.Harvests
+        //        .Where(h => h.HarvestDate >= fromDate && h.HarvestDate <= toDate)
+        //        .GroupBy(h => h.VarietyID)
+        //        .Select(group => new
+        //        {
+        //            HempSort = group.Key,
+        //            AvgTravelCount = context.Agronomists
+        //                .Where(a => a.TravelAssignments
+        //                    .Any(ta => ta.TravelDate >= fromDate && ta.TravelDate <= toDate)
+        //                    && context.Harvests
+        //                        .Count(h => h.AgronomistID == a.AgronomistID && h.HarvestDate >= fromDate && h.HarvestDate <= toDate) >= n
+        //                )
+        //                .Select(a => a.TravelAssignments.Count(ta => ta.TravelDate >= fromDate && ta.TravelDate <= toDate))
+        //                .DefaultIfEmpty(0)
+        //                .Average()
+        //        })
+        //        .OrderByDescending(result => result.AvgTravelCount)
+        //        .ToList();
+
+        //    return View(sortedHempSorts);
+        //}
+
+        //12 not upd
         public IActionResult ShowProductsByReturnPercentage(int n)
         {
             var products = context.Purchases
@@ -231,8 +225,8 @@ namespace HempPlantationsDatabase.Controllers
                     CustomerCount = g.Select(p => p.ConsumerID).Distinct().Count(),
                     ReturnCustomerCount = context.Returns
                         .Count(r => r.ProductID == g.Key && r.Quantity > 0),
-                    ReturnPercentage = context.Returns
-                        .Count(r => r.ProductID == g.Key && r.Quantity > 0) * 100.0 / g.Select(p => p.ConsumerID).Distinct().Count()
+                    ReturnPercentage = g.Any() ?
+                        context.Returns.Count(r => r.ProductID == g.Key && r.Quantity > 0) * 100.0 / g.Select(p => p.ConsumerID).Distinct().Count() : 0
                 })
                 .Where(p => p.CustomerCount >= n)
                 .OrderByDescending(p => p.ReturnPercentage)
@@ -240,6 +234,7 @@ namespace HempPlantationsDatabase.Controllers
 
             return View(products);
         }
+
 
 
 

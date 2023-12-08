@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Hc5C1pdMwQQHs/zgPmPo50SsjEcme/h0j/e3xXA7hZz/mZsYDXoyX6vJf0WU2ZpBfjLP5sr5nVAmskSJoREOeA==",
+  "dgSpecHash": "dfE5apES9Iw85zGZvOZKsNKfcwIKuetAKoLzT/32wE0pgpAoGZ7Pz12K2fDYxep/6Mbmv1ER2ulEe7aWRf9gHg==",
   "success": true,
-  "projectFilePath": "D:\\cpp\\000 cs\\0 1univer\\01 DB project\\WebApplication1\\HempPlantationsDatabase\\HempPlantationsDatabase.csproj",
+  "projectFilePath": "D:\\cpp\\000 cs\\0 1univer\\02DBProject\\HempPlantationsDatabase\\HempPlantationsDatabase.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\arsen\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\arsen\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",

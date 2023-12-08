@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Distinct Consumers</title>
+    <title>Common Tastings</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -34,19 +34,19 @@
     </style>
 </head>
 <body>
-    <h1>Distinct Consumers</h1>
+    <h1>Common Tastings</h1>
 
     <table>
         <thead>
             <tr>
-                <th>Consumer ID</th>
+                <th>Tasting ID</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var customerId in Model)
+            @foreach (var tastingId in Model)
             {
                 <tr>
-                    <td>@customerId</td>
+                    <td>@tastingId</td>
                 </tr>
             }
         </tbody>

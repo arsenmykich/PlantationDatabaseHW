@@ -4,8 +4,33 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            margin-top: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        button[type="submit"] {
+            margin-top: 10px;
+        }
+
+        .empty-space {
+            margin-bottom: 50px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -25,93 +50,393 @@
                 <h2>Requests</h2>
                 <!-- Форма 1 -->
                 <form asp-action="ShowDistinctConsumers" asp-controller="Home" method="post">
-                    <label for="agronomID">Agronomist:</label>
-                    <input type="text" id="agronomID" name="agronomID" required />
-                    <label for="n">Value of N:</label>
-                    <input type="text" id="n" name="n" required />
-                    <label for="from_date">From Date:</label>
-                    <input type="datetime" id="from_date" name="from_date" required />
-                    <label for="to_date">To Date:</label>
-                    <input type="datetime" id="to_date" name="to_date" required />
-                    <button type="submit">Show result</button>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <p class="lead">
+                                1)Для агронома A знайти всіх споживачів, яким він продавав продукт хоча б N разів за вказаний період (з дати F по дату T):
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="agronomID">Agronomist:</label>
+                            <input type="text" id="agronomID" name="agronomID" class="form-control" required />
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="n">Value of N:</label>
+                            <input type="text" id="n" name="n" class="form-control" required />
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="from_date">From Date:</label>
+                            <input type="datetime" id="from_date" name="from_date" class="form-control" required />
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="to_date">To Date:</label>
+                            <input type="datetime" id="to_date" name="to_date" class="form-control" required />
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Show result</button>
+                </form>
+
+
+                <script>
+                    window.onload = function () {
+                        document.getElementById('from_date').value = '2023-01-01T12:00:00+03:00';
+                        document.getElementById('to_date').value = '2023-12-12T12:00:00+03:00';
+                    };
+                </script>
+
+                <!-- Форма 2 -->
+                <!-- Form 2 -->
+                <form asp-action="ShowProductsPurchasedByConsumer" asp-controller="Home" method="post">
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <p class="lead">
+                                2)Для споживача C знайти всі продукти, які він придбав за вказаний період (з дати F по дату T):
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="consumerID">Consumer:</label>
+                            <input type="text" id="consumerID" name="consumerID" class="form-control" required />
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="from_date_products">From Date:</label>
+                            <input type="datetime" id="from_date_products" name="from_date_products" class="form-control" required />
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="to_date_products">To Date:</label>
+                            <input type="datetime" id="to_date_products" name="to_date_products" class="form-control" required />
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Show result</button>
                 </form>
                 <script>
                     window.onload = function () {
-                        document.getElementById('from_date').value = '2019-05-08T12:00:00+03:00';
-                        document.getElementById('to_date').value = '2019-05-08T12:00:00+03:00';
+                        document.getElementById('from_date_products').value = '2023-01-01T12:00:00+03:00';
+                        document.getElementById('to_date_products').value = '2023-12-12T12:00:00+03:00';
                     };
                 </script>
-                <!-- Форма 2 -->
-                <form asp-action="ShowProductsPurchasedByConsumer" asp-controller="Home" method="post">
-                    <label for="consumerID">Consumer ID:</label>
-                    <input type="text" id="consumerID" name="consumerID" required />
-                    <button type="submit">Show Products Purchased</button>
-                </form>
+
                 <!-- Форма 3 -->
+                <!-- Form 3 -->
                 <form asp-action="ShowAgronomistsForConsumer" asp-controller="Home" method="post">
-                    <label for="consumerID">Consumer ID:</label>
-                    <input type="text" id="consumerID" name="consumerID" required />
-                    <label for="n">Value of N:</label>
-                    <input type="text" id="n" name="n" required />
-                    <button type="submit">Show Agronomists</button>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <p class="lead">
+                                3)Для споживача C знайти всіх агрономів, які проводили для нього дегустацію хоча б N разів за вказаний період (з дати F по дату T):
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="consumerID_tastings">Consumer:</label>
+                            <input type="text" id="consumerID_tastings" name="consumerID_tastings" class="form-control" required />
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="from_date_tastings">From Date:</label>
+                            <input type="datetime" id="from_date_tastings" name="from_date_tastings" class="form-control" required />
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="to_date_tastings">To Date:</label>
+                            <input type="datetime" id="to_date_tastings" name="to_date_tastings" class="form-control" required />
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="n_tastings">Value of N:</label>
+                            <input type="text" id="n_tastings" name="n_tastings" class="form-control" required />
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Show result</button>
                 </form>
-                <!-- Форма 4 -->
-                <form asp-action="ShowAgronomistsForTravelAssignments" asp-controller="Home" method="post">
-                    <label for="agronomID">Agronomist ID:</label>
-                    <input type="text" id="agronomID" name="agronomID" required />
-                    <button type="submit">Show Agronomists</button>
+                <script>
+                    window.onload = function () {
+                        document.getElementById('from_date_tastings').value = '2023-01-01T12:00:00+03:00';
+                        document.getElementById('to_date_tastings').value = '2023-12-12T12:00:00+03:00';
+                    };
+                </script>
+
+
+                <!-- Форма 4 upd-->
+                <!-- Form 4 -->
+                <form asp-action="ShowAgronomistsTraveledWithA" asp-controller="Home" method="post">
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <p class="lead">
+                                4)Для агронома А знайти всіх агрономів, з якими він їздив у відрядження протягом вказаного періоду (з дати F по дату T):
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="agronomID_travel">Agronomist A:</label>
+                            <input type="text" id="agronomID_travel" name="agronomID_travel" class="form-control" required />
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="from_date_travel">From Date:</label>
+                            <input type="datetime" id="from_date_travel" name="from_date_travel" class="form-control" required />
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="to_date_travel">To Date:</label>
+                            <input type="datetime" id="to_date_travel" name="to_date_travel" class="form-control" required />
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Show result</button>
                 </form>
+                <script>
+                    window.onload = function () {
+                        document.getElementById('from_date_travel').value = '2023-01-01T12:00:00+03:00';
+                        document.getElementById('to_date_travel').value = '2023-12-12T12:00:00+03:00';
+                    };
+                </script>
+
+
                 <!-- Форма 5 -->
-                <form asp-action="ShowAgronomistsForConsumer2" asp-controller="Home" method="post">
-                    <label for="consumerID">Consumer ID:</label>
-                    <input type="text" id="consumerID" name="consumerID" required />
-                    <button type="submit">Show Agronomists</button>
+                <!-- Form 5 upd -->
+                <form asp-action="ShowAgronomistsForConsumerSalesAndTastings" asp-controller="Home" method="post">
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <p class="lead">
+                                5)Для споживача С знайти всіх агрономів, які продали йому хоча б щось та провели для нього хоча б одну дегустацію протягом вказаного періоду (з дати F по дату T):
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="consumerID_sales_tastings">Consumer:</label>
+                            <input type="text" id="consumerID_sales_tastings" name="consumerID_sales_tastings" class="form-control" required />
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="from_date_sales_tastings">From Date:</label>
+                            <input type="datetime" id="from_date_sales_tastings" name="from_date_sales_tastings" class="form-control" required />
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="to_date_sales_tastings">To Date:</label>
+                            <input type="datetime" id="to_date_sales_tastings" name="to_date_sales_tastings" class="form-control" required />
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Show result</button>
                 </form>
+                <script>
+                    window.onload = function () {
+                        document.getElementById('from_date_sales_tastings').value = '2023-01-01T12:00:00+03:00';
+                        document.getElementById('to_date_sales_tastings').value = '2023-12-12T12:00:00+03:00';
+                    };
+                </script>
+
+
                 <!-- Форма 6 -->
-                <form asp-action="ShowConsumersWithDistinctProducts" asp-controller="Home" method="post">
-                    <label for="n">Value of N:</label>
-                    <input type="text" id="n" name="n" required />
-                    <button type="submit">Show Consumers</button>
+                <!-- Form 6 upd-->
+                <form asp-action="ShowConsumersForDistinctProductPurchases" asp-controller="Home" method="post">
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <p class="lead">
+                                6)Знайти всіх споживачів, які купили щонайменше N різних продуктів за вказаний період (з дати F по дату T):
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="n_distinct_products">Minimum Number of Distinct Products:</label>
+                            <input type="text" id="n_distinct_products" name="n_distinct_products" class="form-control" required />
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="from_date_distinct_products">From Date:</label>
+                            <input type="datetime" id="from_date_distinct_products" name="from_date_distinct_products" class="form-control" required />
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="to_date_distinct_products">To Date:</label>
+                            <input type="datetime" id="to_date_distinct_products" name="to_date_distinct_products" class="form-control" required />
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Show result</button>
                 </form>
+                <script>
+                    window.onload = function () {
+                        document.getElementById('from_date_distinct_products').value = '2023-01-01T12:00:00+03:00';
+                        document.getElementById('to_date_distinct_products').value = '2023-12-12T12:00:00+03:00';
+                    };
+                </script>
+
+
                 <!-- Форма 7 -->
-                <form asp-action="ShowAgronomistsWithDistinctHempSorts" asp-controller="Home" method="post">
-                    <label for="n">Value of N:</label>
-                    <input type="text" id="n" name="n" required />
-                    <button type="submit">Show Agronomists</button>
+                <!-- Form 7 upd -->
+                <form asp-action="ShowAgronomistsForDistinctHempVarieties" asp-controller="Home" method="post">
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <p class="lead">
+                                7)Знайти всіх агрономів, які збирали урожай хоча б N різних сортів коноплі за вказаний період (з дати F по дату T):
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="n_distinct_hemp_varieties">Minimum Number of Distinct Hemp Varieties:</label>
+                            <input type="text" id="n_distinct_hemp_varieties" name="n_distinct_hemp_varieties" class="form-control" required />
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="from_date_distinct_hemp_varieties">From Date:</label>
+                            <input type="datetime" id="from_date_distinct_hemp_varieties" name="from_date_distinct_hemp_varieties" class="form-control" required />
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="to_date_distinct_hemp_varieties">To Date:</label>
+                            <input type="datetime" id="to_date_distinct_hemp_varieties" name="to_date_distinct_hemp_varieties" class="form-control" required />
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Show result</button>
                 </form>
+                <script>
+                    window.onload = function () {
+                        document.getElementById('from_date_distinct_hemp_varieties').value = '2023-01-01T12:00:00+03:00';
+                        document.getElementById('to_date_distinct_hemp_varieties').value = '2023-12-12T12:00:00+03:00';
+                    };
+                </script>
+
+
                 <!-- Форма 8 -->
-                <form asp-action="ShowCommonTastings" asp-controller="Home" method="post">
-                    <label for="consumerID">Consumer ID:</label>
-                    <input type="text" id="consumerID" name="consumerID" required />
-                    <label for="agronomID">Agronomist ID:</label>
-                    <input type="text" id="agronomID" name="agronomID" required />
-                    <button type="submit">Show Common Tastings</button>
+                <!-- Form 8 upd-->
+                <form asp-action="ShowSharedTastings" asp-controller="Home" method="post" class="my-form">
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <p class="lead">
+                                8)Знайти всі спільні дегустації для споживача С та агронома А за вказаний період (з дати F по дату T):
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="consumer_id_shared_tastings">Consumer ID:</label>
+                        <input type="text" id="consumer_id_shared_tastings" name="consumer_id_shared_tastings" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="agronomist_id_shared_tastings">Agronomist ID:</label>
+                        <input type="text" id="agronomist_id_shared_tastings" name="agronomist_id_shared_tastings" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="from_date_shared_tastings">From Date:</label>
+                        <input type="datetime" id="from_date_shared_tastings" name="from_date_shared_tastings" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="to_date_shared_tastings">To Date:</label>
+                        <input type="datetime" id="to_date_shared_tastings" name="to_date_shared_tastings" class="form-control" required />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Show result</button>
                 </form>
+                <script>
+                    window.onload = function () {
+                        document.getElementById('from_date_shared_tastings').value = '2023-01-01T12:00:00+03:00';
+                        document.getElementById('to_date_shared_tastings').value = '2023-12-12T12:00:00+03:00';
+                    };
+                </script>
+
                 <!-- Форма 9 -->
-                <form asp-action="ShowTastingCountForAgronomistAndProduct" asp-controller="Home" method="post">
-                    <label for="agronomID">Agronomist ID:</label>
-                    <input type="text" id="agronomID" name="agronomID" required />
-                    <label for="n">Value of N:</label>
-                    <input type="text" id="n" name="n" required />
-                    <button type="submit">Show Tasting Count</button>
+                <!-- Form 9 upd-->
+                <form asp-action="ShowTastingCounts" asp-controller="Home" method="post" class="my-form">
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <p class="lead">
+                                9)Для агронома A та кожного продукту, дегустацію якого він проводив, знайти скільки разів за вказаний період (з дати F по дату T) він проводив дегустацію для щонайменше N споживачів:
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="agronom_id_tasting_counts">Agronomist ID:</label>
+                        <input type="text" id="agronom_id_tasting_counts" name="agronom_id_tasting_counts" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="from_date_tasting_counts">From Date:</label>
+                        <input type="datetime" id="from_date_tasting_counts" name="from_date_tasting_counts" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="to_date_tasting_counts">To Date:</label>
+                        <input type="datetime" id="to_date_tasting_counts" name="to_date_tasting_counts" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="min_consumers_tasting_counts">Min Consumers (N):</label>
+                        <input type="text" id="min_consumers_tasting_counts" name="min_consumers_tasting_counts" class="form-control" required />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Show result</button>
                 </form>
+                <script>
+                    window.onload = function () {
+                        document.getElementById('from_date_tasting_counts').value = '2023-01-01T12:00:00+03:00';
+                        document.getElementById('to_date_tasting_counts').value = '2023-12-12T12:00:00+03:00';
+                    };
+                </script>
+
+
                 <!-- Форма 10 -->
-                <form asp-action="ShowReviewCountByMonth" asp-controller="Home" method="post">
-                    <label for="customerID">Customer ID:</label>
-                    <input type="text" id="customerID" name="customerID" required />
-                    <button type="submit">Show Review Count</button>
+                <!-- Form 10 upd-->
+                <form asp-action="ShowReviewCounts" asp-controller="Home" method="post" class="my-form">
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <p class="lead">
+                                10)Для споживача С знайти сумарну кількість відгуків по місяцях, які він залишив за вказаний період (з дати F по дату T)
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="consumer_id_review_counts">Consumer ID:</label>
+                        <input type="text" id="consumer_id_review_counts" name="consumer_id_review_counts" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="from_date_review_counts">From Date:</label>
+                        <input type="datetime" id="from_date_review_counts" name="from_date_review_counts" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="to_date_review_counts">To Date:</label>
+                        <input type="datetime" id="to_date_review_counts" name="to_date_review_counts" class="form-control" required />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Show result</button>
                 </form>
-                <!-- Форма 11 -->
+                <script>
+                    window.onload = function () {
+                        document.getElementById('from_date_review_counts').value = '2023-01-01T12:00:00+03:00';
+                        document.getElementById('to_date_review_counts').value = '2023-12-12T12:00:00+03:00';
+                    };
+                </script>
+
+
+@*                 <!-- Форма 11 -->
                 <form asp-action="ShowHempSortsByAvgTravelCount" asp-controller="Home" method="post">
                     <label for="n">Value of N:</label>
                     <input type="text" id="n" name="n" required />
-                    <button type="submit">Show Hemp Sorts</button>
-                </form>
+                    <button type="submit">Show Hemp Sorts (not working)</button>
+                </form> *@
                 <!-- Форма 12 -->
-                <form asp-action="ShowProductsByReturnPercentage" asp-controller="Home" method="post">
-                    <label for="n">Value of N:</label>
-                    <input type="text" id="n" name="n" required />
-                    <button type="submit">Show Products</button>
+                <form asp-action="ShowProductsByReturnPercentage" asp-controller="Home" method="post" class="my-form">
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <p class="lead">
+                                12)Вивести продукти, які були придбані щонайменше N різними споживачами у порядку спадання відсотку повернень
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="n">Value of N:</label>
+                        <input type="text" id="n" name="n" class="form-control" required />
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Show result</button>
+                    <div class="empty-space">
+
+
+
+
+                    </div>
                 </form>
     
             </div>
