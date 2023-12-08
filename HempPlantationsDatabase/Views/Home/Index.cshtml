@@ -8,128 +8,115 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-    <li class="list-group-item">
-        <a href="@Url.Action("Create", "Harvests")" class="btn btn-primary">Create Harvest</a>
-    </li>
-    <li class="list-group-item">
-        <a href="@Url.Action("Create", "Tastings")" class="btn btn-primary">Create Tasting</a>
-    </li>
-    <li class="list-group-item">
-        <a href="@Url.Action("Create", "Purchases")" class="btn btn-primary">Create Purchase</a>
-    </li>
-    <li class="list-group-item">
-        <a href="@Url.Action("Create", "Returns")" class="btn btn-primary">Create Return</a>
-    </li>
-    <li class="list-group-item">
-        <a href="@Url.Action("Create", "Trips")" class="btn btn-primary">Create new Trip</a>
-    </li
-    <li class="list-group-item">
-        <a href="@Url.Action("Create", "Reviews")" class="btn btn-primary">Create new review</a>
-    </li>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Events</h2>
+                <div class="list-group">
+                    <a href="@Url.Action("Create", "Harvests")" class="list-group-item list-group-item-action btn btn-primary">Агроном збирає урожай деякого сорту коноплі</a>
+                    <a href="@Url.Action("Create", "Tastings")" class="list-group-item list-group-item-action btn btn-primary">Агроном проводить дегустацiю продукту для споживача</a>
+                    <a href="@Url.Action("Create", "Purchases")" class="list-group-item list-group-item-action btn btn-primary">Споживач купує у агронома продукт</a>
+                    <a href="@Url.Action("Create", "Returns")" class="list-group-item list-group-item-action btn btn-primary">Споживач повертає продукт;</a>
+                    <a href="@Url.Action("Create", "Trips")" class="list-group-item list-group-item-action btn btn-primary">Агроном їде у вiдрядження;</a>
+                    <a href="@Url.Action("Create", "Reviews")" class="list-group-item list-group-item-action btn btn-primary">Споживач залишає вiдгук у книзi скарг та пропозицiй</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h2>Requests</h2>
+                <!-- Форма 1 -->
+                <form asp-action="ShowDistinctConsumers" asp-controller="Home" method="post">
+                    <label for="agronomID">Agronomist:</label>
+                    <input type="text" id="agronomID" name="agronomID" required />
+                    <label for="n">Value of N:</label>
+                    <input type="text" id="n" name="n" required />
+                    <label for="from_date">From Date:</label>
+                    <input type="datetime" id="from_date" name="from_date" required />
+                    <label for="to_date">To Date:</label>
+                    <input type="datetime" id="to_date" name="to_date" required />
+                    <button type="submit">Show result</button>
+                </form>
+                <script>
+                    window.onload = function () {
+                        document.getElementById('from_date').value = '2019-05-08T12:00:00+03:00';
+                        document.getElementById('to_date').value = '2019-05-08T12:00:00+03:00';
+                    };
+                </script>
+                <!-- Форма 2 -->
+                <form asp-action="ShowProductsPurchasedByConsumer" asp-controller="Home" method="post">
+                    <label for="consumerID">Consumer ID:</label>
+                    <input type="text" id="consumerID" name="consumerID" required />
+                    <button type="submit">Show Products Purchased</button>
+                </form>
+                <!-- Форма 3 -->
+                <form asp-action="ShowAgronomistsForConsumer" asp-controller="Home" method="post">
+                    <label for="consumerID">Consumer ID:</label>
+                    <input type="text" id="consumerID" name="consumerID" required />
+                    <label for="n">Value of N:</label>
+                    <input type="text" id="n" name="n" required />
+                    <button type="submit">Show Agronomists</button>
+                </form>
+                <!-- Форма 4 -->
+                <form asp-action="ShowAgronomistsForTravelAssignments" asp-controller="Home" method="post">
+                    <label for="agronomID">Agronomist ID:</label>
+                    <input type="text" id="agronomID" name="agronomID" required />
+                    <button type="submit">Show Agronomists</button>
+                </form>
+                <!-- Форма 5 -->
+                <form asp-action="ShowAgronomistsForConsumer2" asp-controller="Home" method="post">
+                    <label for="consumerID">Consumer ID:</label>
+                    <input type="text" id="consumerID" name="consumerID" required />
+                    <button type="submit">Show Agronomists</button>
+                </form>
+                <!-- Форма 6 -->
+                <form asp-action="ShowConsumersWithDistinctProducts" asp-controller="Home" method="post">
+                    <label for="n">Value of N:</label>
+                    <input type="text" id="n" name="n" required />
+                    <button type="submit">Show Consumers</button>
+                </form>
+                <!-- Форма 7 -->
+                <form asp-action="ShowAgronomistsWithDistinctHempSorts" asp-controller="Home" method="post">
+                    <label for="n">Value of N:</label>
+                    <input type="text" id="n" name="n" required />
+                    <button type="submit">Show Agronomists</button>
+                </form>
+                <!-- Форма 8 -->
+                <form asp-action="ShowCommonTastings" asp-controller="Home" method="post">
+                    <label for="consumerID">Consumer ID:</label>
+                    <input type="text" id="consumerID" name="consumerID" required />
+                    <label for="agronomID">Agronomist ID:</label>
+                    <input type="text" id="agronomID" name="agronomID" required />
+                    <button type="submit">Show Common Tastings</button>
+                </form>
+                <!-- Форма 9 -->
+                <form asp-action="ShowTastingCountForAgronomistAndProduct" asp-controller="Home" method="post">
+                    <label for="agronomID">Agronomist ID:</label>
+                    <input type="text" id="agronomID" name="agronomID" required />
+                    <label for="n">Value of N:</label>
+                    <input type="text" id="n" name="n" required />
+                    <button type="submit">Show Tasting Count</button>
+                </form>
+                <!-- Форма 10 -->
+                <form asp-action="ShowReviewCountByMonth" asp-controller="Home" method="post">
+                    <label for="customerID">Customer ID:</label>
+                    <input type="text" id="customerID" name="customerID" required />
+                    <button type="submit">Show Review Count</button>
+                </form>
+                <!-- Форма 11 -->
+                <form asp-action="ShowHempSortsByAvgTravelCount" asp-controller="Home" method="post">
+                    <label for="n">Value of N:</label>
+                    <input type="text" id="n" name="n" required />
+                    <button type="submit">Show Hemp Sorts</button>
+                </form>
+                <!-- Форма 12 -->
+                <form asp-action="ShowProductsByReturnPercentage" asp-controller="Home" method="post">
+                    <label for="n">Value of N:</label>
+                    <input type="text" id="n" name="n" required />
+                    <button type="submit">Show Products</button>
+                </form>
     
-    
-    
-    @*1*@
-    <li class="list-group-item">
-        <a href="@Url.Action("InputDataDistinctCustomers", "Home")" class="btn btn-primary">ShowDistinctConsumers</a>
-    </li>    
-@*     <li class="list-group-item">
-        <a href="@Url.Action("ProductsPurchasedByConsumerC", "Home")" class="btn btn-primary">ProductsPurchasedByConsumerC</a>
-    </li>  *@
-    @*2*@
-    <form asp-action="ShowProductsPurchasedByConsumer" asp-controller="Home" method="post">
-        <label for="consumerID">Consumer ID:</label>
-        <input type="text" id="consumerID" name="consumerID" required />
-
-        <button type="submit">Show Products Purchased</button>
-    </form>
-
-
-    @*3*@
-    <form asp-action="ShowAgronomistsForConsumer" asp-controller="Home" method="post">
-    <label for="consumerID">Consumer ID:</label>
-    <input type="text" id="consumerID" name="consumerID" required />
-
-    <label for="n">Value of N:</label>
-    <input type="text" id="n" name="n" required />
-
-    <button type="submit">Show Agronomists</button>
-    </form>
-
-    @*4*@
-    <form asp-action="ShowAgronomistsForTravelAssignments" asp-controller="Home" method="post">
-    <label for="agronomID">Agronomist ID:</label>
-    <input type="text" id="agronomID" name="agronomID" required />
-
-    <button type="submit">Show Agronomists</button>
-    </form>
-
-
-    @*5*@
-    <form asp-action="ShowAgronomistsForConsumer2" asp-controller="Home" method="post">
-    <label for="consumerID">Consumer ID:</label>
-    <input type="text" id="consumerID" name="consumerID" required />
-
-    <button type="submit">Show Agronomists</button>
-    </form>
-
-    @*6*@
-    <form asp-action="ShowConsumersWithDistinctProducts" asp-controller="Home" method="post">
-    <label for="n">Value of N:</label>
-    <input type="text" id="n" name="n" required />
-
-    <button type="submit">Show Consumers</button>
-    </form>
-
-    @*7*@
-    <form asp-action="ShowAgronomistsWithDistinctHempSorts" asp-controller="Home" method="post">
-    <label for="n">Value of N:</label>
-    <input type="text" id="n" name="n" required />
-
-    <button type="submit">Show Agronomists</button>
-    </form>
-
-    @*8*@
-    <form asp-action="ShowCommonTastings" asp-controller="Home" method="post">
-    <label for="consumerID">Consumer ID:</label>
-    <input type="text" id="consumerID" name="consumerID" required />
-
-    <label for="agronomID">Agronomist ID:</label>
-    <input type="text" id="agronomID" name="agronomID" required />
-
-    <button type="submit">Show Common Tastings</button>
-    </form>
-    @*9*@
-    <form asp-action="ShowTastingCountForAgronomistAndProduct" asp-controller="Home" method="post">
-    <label for="agronomID">Agronomist ID:</label>
-    <input type="text" id="agronomID" name="agronomID" required />
-
-    <label for="n">Value of N:</label>
-    <input type="text" id="n" name="n" required />
-
-    <button type="submit">Show Tasting Count</button>
-    </form>
-    @*10*@
-    <form asp-action="ShowReviewCountByMonth" asp-controller="Home" method="post">
-    <label for="customerID">Customer ID:</label>
-    <input type="text" id="customerID" name="customerID" required />
-
-    <button type="submit">Show Review Count</button>
-    </form>
-    @*11*@
-    <form asp-action="ShowHempSortsByAvgTravelCount" asp-controller="Home" method="post">
-    <label for="n">Value of N:</label>
-    <input type="text" id="n" name="n" required />
-
-    <button type="submit">Show Hemp Sorts</button>
-    </form>
-    @*12*@
-    <form asp-action="ShowProductsByReturnPercentage" asp-controller="Home" method="post">
-    <label for="n">Value of N:</label>
-    <input type="text" id="n" name="n" required />
-
-    <button type="submit">Show Products</button>
-</form>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -138,6 +125,7 @@
 <a asp-controller="Home" asp-action="ProductsPurchasedByConsumer" asp-route-consumerId=1>Show Products Purchased by Consumer C</a>
  *@
 
-
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+EmmeNamvFfC+qj0nR8qyBrXfJvaTzIYT8E" crossorigin="anonymous"></script>
 </body>
 </html>

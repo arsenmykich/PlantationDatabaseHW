@@ -51,8 +51,8 @@ namespace HempPlantationsDatabase.Controllers
         public IActionResult Create()
         {
             // You can customize this based on your actual model and context
-            ViewData["AgronomistID"] = new SelectList(context.Agronomists, "AgronomistID", "AgronomistID");
-            ViewData["VarietyID"] = new SelectList(context.HempVarieties, "VarietyID", "VarietyID");
+            ViewData["AgronomistID"] = new SelectList(context.Agronomists, "AgronomistID", "FullName");
+            ViewData["VarietyID"] = new SelectList(context.HempVarieties, "VarietyID", "VarietyName");
             return View();
         }
 
