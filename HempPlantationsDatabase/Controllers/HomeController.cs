@@ -121,7 +121,7 @@ namespace HempPlantationsDatabase.Controllers
 
 
 
-        //6 need fix upd needs check
+        //6 need fix | upd needs check |  good
         public IActionResult ShowConsumersForDistinctProductPurchases(int n_distinct_products, DateTime from_date_distinct_products, DateTime to_date_distinct_products)
         {
             var consumerIds = context.Purchases
@@ -234,18 +234,6 @@ namespace HempPlantationsDatabase.Controllers
 
             return View(products);
         }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -42,6 +42,8 @@
             <p><strong>Trip Date:</strong> @item.TripDate.ToShortDateString()</p>
             <p><strong>Destination:</strong> @item.Destination</p>
             <!-- Add other fields as needed -->
+            <!-- Edit Button -->
+            <a href="@Url.Action("Edit", "Trips", new { id = item.TripID })" class="btn btn-primary edit-button">Edit</a>
         </div>
     }
 </body>

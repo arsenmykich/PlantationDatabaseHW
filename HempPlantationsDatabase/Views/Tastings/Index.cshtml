@@ -43,6 +43,8 @@
             <p><strong>Tasting Date:</strong> @item.TastingDate.ToShortDateString()</p>
             <p><strong>Rating:</strong> @item.Rating</p>
             <!-- Add other fields as needed -->
+            <!-- Edit Button -->
+            <a href="@Url.Action("Edit", "Tastings", new { id = item.TastingID })" class="btn btn-primary edit-button">Edit</a>
         </div>
     }
 </body>

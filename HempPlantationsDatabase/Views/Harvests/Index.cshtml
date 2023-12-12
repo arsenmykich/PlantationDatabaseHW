@@ -43,6 +43,9 @@
             <p><strong>Harvest Date:</strong> @item.HarvestDate.ToShortDateString()</p>
             <p><strong>Quantity:</strong> @item.Quantity</p>
             <!-- Add other fields as needed -->
+
+            <!-- Edit Button -->
+            <a href="@Url.Action("Edit", "Harvests", new { id = item.HarvestID })" class="btn btn-primary edit-button">Edit</a>
         </div>
     }
 </body>

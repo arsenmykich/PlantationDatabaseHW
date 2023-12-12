@@ -18,12 +18,36 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\cpp\000 cs\0 1univer\02DBProject\HempPlantationsDatabase
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/cpp/000 cs/0 1univer/02DBProject/HempPlantationsDatabase/Views/Agronomists/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdyb25vbWlzdHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/cpp/000 cs/0 1univer/02DBProject/HempPlantationsDatabase/Views/Agronomists/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdyb25vbWlzdHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/cpp/000 cs/0 1univer/02DBProject/HempPlantationsDatabase/Views/Agronomists/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdyb25vbWlzdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/cpp/000 cs/0 1univer/02DBProject/HempPlantationsDatabase/Views/Consumers/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uc3VtZXJzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/cpp/000 cs/0 1univer/02DBProject/HempPlantationsDatabase/Views/Consumers/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uc3VtZXJzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/cpp/000 cs/0 1univer/02DBProject/HempPlantationsDatabase/Views/Consumers/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uc3VtZXJzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/cpp/000 cs/0 1univer/02DBProject/HempPlantationsDatabase/Views/HarvestProducts/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFydmVzdFByb2R1Y3RzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/cpp/000 cs/0 1univer/02DBProject/HempPlantationsDatabase/Views/HarvestProducts/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFydmVzdFByb2R1Y3RzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/cpp/000 cs/0 1univer/02DBProject/HempPlantationsDatabase/Views/HarvestProducts/Index.cshtml]
@@ -34,8 +58,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFydmVzdHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/cpp/000 cs/0 1univer/02DBProject/HempPlantationsDatabase/Views/Harvests/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFydmVzdHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/cpp/000 cs/0 1univer/02DBProject/HempPlantationsDatabase/Views/Harvests/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFydmVzdHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/cpp/000 cs/0 1univer/02DBProject/HempPlantationsDatabase/Views/HempVarieties/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVtcFZhcmlldGllc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/cpp/000 cs/0 1univer/02DBProject/HempPlantationsDatabase/Views/HempVarieties/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVtcFZhcmlldGllc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/cpp/000 cs/0 1univer/02DBProject/HempPlantationsDatabase/Views/HempVarieties/Index.cshtml]
@@ -110,12 +146,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTaG93VGFzdGluZ0NvdW50cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/cpp/000 cs/0 1univer/02DBProject/HempPlantationsDatabase/Views/Products/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/cpp/000 cs/0 1univer/02DBProject/HempPlantationsDatabase/Views/Products/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/cpp/000 cs/0 1univer/02DBProject/HempPlantationsDatabase/Views/Products/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/cpp/000 cs/0 1univer/02DBProject/HempPlantationsDatabase/Views/Purchases/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/cpp/000 cs/0 1univer/02DBProject/HempPlantationsDatabase/Views/Purchases/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/cpp/000 cs/0 1univer/02DBProject/HempPlantationsDatabase/Views/Purchases/Index.cshtml]
@@ -126,12 +174,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV0dXJuc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/cpp/000 cs/0 1univer/02DBProject/HempPlantationsDatabase/Views/Returns/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV0dXJuc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/cpp/000 cs/0 1univer/02DBProject/HempPlantationsDatabase/Views/Returns/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV0dXJuc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/cpp/000 cs/0 1univer/02DBProject/HempPlantationsDatabase/Views/Reviews/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3c1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/cpp/000 cs/0 1univer/02DBProject/HempPlantationsDatabase/Views/Reviews/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3c1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/cpp/000 cs/0 1univer/02DBProject/HempPlantationsDatabase/Views/Reviews/Index.cshtml]
@@ -146,6 +202,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/cpp/000 cs/0 1univer/02DBProject/HempPlantationsDatabase/Views/TastingReviews/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFzdGluZ1Jldmlld3NcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/cpp/000 cs/0 1univer/02DBProject/HempPlantationsDatabase/Views/TastingReviews/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFzdGluZ1Jldmlld3NcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/cpp/000 cs/0 1univer/02DBProject/HempPlantationsDatabase/Views/TastingReviews/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFzdGluZ1Jldmlld3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -154,8 +218,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFzdGluZ3NcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/cpp/000 cs/0 1univer/02DBProject/HempPlantationsDatabase/Views/Tastings/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFzdGluZ3NcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/cpp/000 cs/0 1univer/02DBProject/HempPlantationsDatabase/Views/Tastings/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFzdGluZ3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/cpp/000 cs/0 1univer/02DBProject/HempPlantationsDatabase/Views/TravelAssignments/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhdmVsQXNzaWdubWVudHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/cpp/000 cs/0 1univer/02DBProject/HempPlantationsDatabase/Views/TravelAssignments/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhdmVsQXNzaWdubWVudHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/cpp/000 cs/0 1univer/02DBProject/HempPlantationsDatabase/Views/TravelAssignments/Index.cshtml]
@@ -164,6 +240,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/cpp/000 cs/0 1univer/02DBProject/HempPlantationsDatabase/Views/Trips/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJpcHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/cpp/000 cs/0 1univer/02DBProject/HempPlantationsDatabase/Views/Trips/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJpcHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/cpp/000 cs/0 1univer/02DBProject/HempPlantationsDatabase/Views/Trips/Index.cshtml]

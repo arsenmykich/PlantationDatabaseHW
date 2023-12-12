@@ -1,0 +1,51 @@
+﻿@model databaseHempPlantations.Models.Harvest
+
+@{
+    ViewData["Title"] = "Edit Harvest";
+}
+
+<h1>Edit Harvest</h1>
+
+<form asp-action="Edit" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <input type="hidden" asp-for="HarvestID" />
+
+    <div class="form-group">
+        <label asp-for="AgronomistID" class="control-label">Agronomist ID</label>
+        <input asp-for="AgronomistID" class="form-control" />
+        <span asp-validation-for="AgronomistID" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="VarietyID" class="control-label">Variety ID</label>
+        <input asp-for="VarietyID" class="form-control" />
+        <span asp-validation-for="VarietyID" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="HarvestDate" class="control-label">Harvest Date</label>
+        <input asp-for="HarvestDate" type="datetime" class="form-control" />
+        <span asp-validation-for="HarvestDate" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Quantity" class="control-label">Quantity</label>
+        <input asp-for="Quantity" class="form-control" />
+        <span asp-validation-for="Quantity" class="text-danger"></span>
+    </div>
+
+    <!-- Add more form groups for other properties -->
+
+    <div class="form-group">
+        <input type="submit" value="Save Changes" class="btn btn-primary" />
+    </div>
+</form>
+
+<a asp-action="Index">Back to Harvest List</a>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

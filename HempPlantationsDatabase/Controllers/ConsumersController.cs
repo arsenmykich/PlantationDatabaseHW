@@ -1,6 +1,7 @@
 ﻿using databaseHempPlantations.Models;
 using HempPlantationsDatabase.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
 namespace HempPlantationsDatabase.Controllers
@@ -29,5 +30,80 @@ namespace HempPlantationsDatabase.Controllers
 
             return View(consumers);
         }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("ConsumerID,FirstName,LastName,Email,PhoneNumber,RegistrationDate")] Consumer consumer)
+        {
+            
+                context.Consumers.Add(consumer);
+                await context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            
+
+            return View(consumer);
+        }
+
+        public IActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var consumer = context.Consumers.Find(id);
+
+            if (consumer == null)
+            {
+                return NotFound();
+            }
+
+            return View(consumer);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("ConsumerID,FirstName,LastName,Email,PhoneNumber,RegistrationDate")] Consumer consumer)
+        {
+            if (id != consumer.ConsumerID)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    context.Update(consumer);
+                    await context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!ConsumerExists(consumer.ConsumerID))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(consumer);
+        }
+
+        private bool ConsumerExists(int id)
+        {
+            return context.Consumers.Any(e => e.ConsumerID == id);
+        }
+
     }
 }
