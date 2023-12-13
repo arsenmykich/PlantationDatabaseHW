@@ -87,6 +87,35 @@ namespace HempPlantationsDatabase.Controllers
             return context.HempVarieties.Any(e => e.VarietyID == id);
         }
 
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var hempVariety = await context.HempVarieties
+                .FirstOrDefaultAsync(m => m.VarietyID == id);
+
+            if (hempVariety == null)
+            {
+                return NotFound();
+            }
+
+            return View(hempVariety);
+        }
+
+        // POST: HempVarieties/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var hempVariety = await context.HempVarieties.FindAsync(id);
+            context.HempVarieties.Remove(hempVariety);
+            await context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
 
     }
 }

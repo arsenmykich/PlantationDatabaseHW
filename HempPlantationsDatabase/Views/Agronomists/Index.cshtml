@@ -43,7 +43,10 @@
             <p><strong>Specialty:</strong> @item.Specialty</p>
 
             <!-- Edit Button -->
+           @*  <a href="@Url.Action("Edit", "Agronomists", new { id = item.AgronomistID })" class="btn btn-primary edit-button">Edit</a>
+            <a href="@Url.Action("Delete", "Agronomists", new { id = item.AgronomistID })" class="btn btn-primary edit-button">Delete</a> *@
             <a href="@Url.Action("Edit", "Agronomists", new { id = item.AgronomistID })" class="btn btn-primary edit-button">Edit</a>
+            <a href="@Url.Action("Delete", "Agronomists", new { id = item.AgronomistID })" class="btn btn-primary edit-button" style="margin-top: 5px;">Delete</a>
 
         </div>
     }

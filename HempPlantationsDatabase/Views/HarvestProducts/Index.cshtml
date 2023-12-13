@@ -45,7 +45,7 @@
             <!-- Add other fields as needed -->
             <!-- Edit Button -->
             <a href="@Url.Action("Edit", "HarvestProducts", new { id = item.HarvestProductID })" class="btn btn-primary edit-button">Edit</a>
-
+            <a href="@Url.Action("Delete", "HarvestProducts", new { id = item.HarvestProductID })" class="btn btn-primary edit-button" style="margin-top: 5px;">Delete</a>
         </div>
     }
 </body>

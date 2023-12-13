@@ -108,5 +108,34 @@ namespace HempPlantationsDatabase.Controllers
         }
 
 
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var agronomist = await context.Agronomists
+                .FirstOrDefaultAsync(m => m.AgronomistID == id);
+            if (agronomist == null)
+            {
+                return NotFound();
+            }
+
+            return View(agronomist);
+        }
+
+        // POST: Agronomists/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var agronomist = await context.Agronomists.FindAsync(id);
+            context.Agronomists.Remove(agronomist);
+            await context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+
     }
 }
