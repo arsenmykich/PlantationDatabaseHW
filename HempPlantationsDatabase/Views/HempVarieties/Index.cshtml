@@ -28,6 +28,9 @@
             margin: 5px 0;
         }
     </style>
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
 </head>
 <body>
     <h2>Hemp Varieties</h2>
@@ -39,6 +42,8 @@
             <p><strong>ID:</strong> @item.VarietyID</p>
             <p><strong>Description:</strong> @item.Description</p>
             <!-- Add other fields as needed -->
+            <!-- Edit Button -->
+            <a href="@Url.Action("Edit", "HempVarieties", new { id = item.VarietyID })" class="btn btn-primary edit-button">Edit</a>
         </div>
     }
 </body>

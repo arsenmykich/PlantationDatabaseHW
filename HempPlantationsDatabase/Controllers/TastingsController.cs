@@ -62,6 +62,56 @@ namespace HempPlantationsDatabase.Controllers
             return View(tasting);
         }
 
+        public IActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var tasting = context.Tastings.Find(id);
+
+            if (tasting == null)
+            {
+                return NotFound();
+            }
+
+            ViewData["ConsumerID"] = new SelectList(context.Consumers, "ConsumerID", "FullName", tasting.ConsumerID);
+            ViewData["AgronomistID"] = new SelectList(context.Agronomists, "AgronomistID", "FullName", tasting.AgronomistID);
+            ViewData["ProductID"] = new SelectList(context.Products, "ProductID", "ProductName", tasting.ProductID);
+
+            return View(tasting);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("TastingID,AgronomistID,ConsumerID,ProductID,TastingDate,Rating")] Tasting tasting)
+        {
+            if (id != tasting.TastingID)
+            {
+                return NotFound();
+            }
+
+
+                    context.Update(tasting);
+                    await context.SaveChangesAsync();
+
+
+                return RedirectToAction(nameof(Index));
+            
+
+            ViewData["ConsumerID"] = new SelectList(context.Consumers, "ConsumerID", "FullName", tasting.ConsumerID);
+            ViewData["AgronomistID"] = new SelectList(context.Agronomists, "AgronomistID", "FullName", tasting.AgronomistID);
+            ViewData["ProductID"] = new SelectList(context.Products, "ProductID", "ProductName", tasting.ProductID);
+
+            return View(tasting);
+        }
+
+        private bool TastingExists(int id)
+        {
+            return context.Tastings.Any(e => e.TastingID == id);
+        }
+
 
     }
 }

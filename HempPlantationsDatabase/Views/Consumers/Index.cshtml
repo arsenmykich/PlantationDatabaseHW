@@ -28,6 +28,9 @@
             margin: 5px 0;
         }
     </style>
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
 </head>
 <body>
     <h2>Consumers</h2>
@@ -40,7 +43,10 @@
             <p><strong>Email:</strong> @item.Email</p>
             <p><strong>Phone number:</strong> @item.PhoneNumber</p>
             <p><strong>Registration date:</strong> @item.RegistrationDate.ToShortDateString()</p>
-            <!-- Add other fields as needed -->
+
+            <!-- Edit Button -->
+            <a href="@Url.Action("Edit", "Consumers", new { id = item.ConsumerID })" class="btn btn-primary edit-button">Edit</a>
+
         </div>
     }
 </body>

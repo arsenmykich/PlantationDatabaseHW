@@ -1,0 +1,29 @@
+﻿@model databaseHempPlantations.Models.TastingReview
+
+<h1>Create Tasting Review</h1>
+
+<form asp-action="Create" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="TastingID" class="control-label">Tasting</label>
+        <select asp-for="TastingID" class="form-control" asp-items="ViewBag.TastingID"></select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ReviewID" class="control-label">Review</label>
+        <select asp-for="ReviewID" class="form-control" asp-items="ViewBag.ReviewID"></select>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+</form>
+
+<a asp-action="Index">Back to TastingReview List</a>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

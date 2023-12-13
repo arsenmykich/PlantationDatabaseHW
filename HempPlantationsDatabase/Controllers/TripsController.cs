@@ -55,5 +55,54 @@ namespace HempPlantationsDatabase.Controllers
 
             return View(trip);
         }
+
+        public IActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var trip = context.Trips.Find(id);
+
+            if (trip == null)
+            {
+                return NotFound();
+            }
+
+            ViewData["HarvestID"] = new SelectList(context.Harvests, "HarvestID", "HarvestID", trip.HarvestID);
+            ViewData["AgronomistID"] = new SelectList(context.Agronomists, "AgronomistID", "FullName", trip.AgronomistID);
+
+            return View(trip);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("TripID,AgronomistID,HarvestID,TripDate,Destination")] Trip trip)
+        {
+            if (id != trip.TripID)
+            {
+                return NotFound();
+            }
+
+
+                    context.Update(trip);
+                    await context.SaveChangesAsync();
+
+
+                return RedirectToAction(nameof(Index));
+            
+
+            ViewData["HarvestID"] = new SelectList(context.Harvests, "HarvestID", "HarvestID", trip.HarvestID);
+            ViewData["AgronomistID"] = new SelectList(context.Agronomists, "AgronomistID", "FullName", trip.AgronomistID);
+
+            return View(trip);
+        }
+
+        private bool TripExists(int id)
+        {
+            return context.Trips.Any(e => e.TripID == id);
+        }
+
     }
 }

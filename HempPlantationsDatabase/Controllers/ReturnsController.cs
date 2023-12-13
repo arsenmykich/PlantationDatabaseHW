@@ -58,5 +58,57 @@ namespace HempPlantationsDatabase.Controllers
 
             return View(returnItem);
         }
+
+
+        public IActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var returnItem = context.Returns.Find(id);
+
+            if (returnItem == null)
+            {
+                return NotFound();
+            }
+
+            ViewData["ConsumerID"] = new SelectList(context.Consumers, "ConsumerID", "FullName", returnItem.ConsumerID);
+            ViewData["AgronomistID"] = new SelectList(context.Agronomists, "AgronomistID", "FullName", returnItem.AgronomistID);
+            ViewData["ProductID"] = new SelectList(context.Products, "ProductID", "ProductName", returnItem.ProductID);
+
+            return View(returnItem);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("ReturnID,ConsumerID,AgronomistID,ProductID,ReturnDate,Quantity")] Return returnItem)
+        {
+            if (id != returnItem.ReturnID)
+            {
+                return NotFound();
+            }
+
+  
+                    context.Update(returnItem);
+                    await context.SaveChangesAsync();
+     
+
+                return RedirectToAction(nameof(Index));
+            
+
+            ViewData["ConsumerID"] = new SelectList(context.Consumers, "ConsumerID", "FullName", returnItem.ConsumerID);
+            ViewData["AgronomistID"] = new SelectList(context.Agronomists, "AgronomistID", "FullName", returnItem.AgronomistID);
+            ViewData["ProductID"] = new SelectList(context.Products, "ProductID", "ProductName", returnItem.ProductID);
+
+            return View(returnItem);
+        }
+
+        private bool ReturnExists(int id)
+        {
+            return context.Returns.Any(e => e.ReturnID == id);
+        }
+
     }
 }

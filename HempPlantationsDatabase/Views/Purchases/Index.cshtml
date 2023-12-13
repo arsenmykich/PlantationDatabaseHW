@@ -44,6 +44,8 @@
             <p><strong>Quantity:</strong> @item.Quantity</p>
             <p><strong>Total Price:</strong> @item.TotalPrice</p>
             <!-- Add other fields as needed -->
+            <!-- Edit Button -->
+            <a href="@Url.Action("Edit", "Purchases", new { id = item.PurchaseID })" class="btn btn-primary edit-button">Edit</a>
         </div>
     }
 </body>

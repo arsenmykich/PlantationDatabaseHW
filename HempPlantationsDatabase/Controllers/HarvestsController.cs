@@ -76,10 +76,73 @@ namespace HempPlantationsDatabase.Controllers
         }
 
 
+        public IActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var harvest = context.Harvests.Find(id);
+
+            if (harvest == null)
+            {
+                return NotFound();
+            }
+
+            return View(harvest);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("HarvestID,AgronomistID,VarietyID,HarvestDate,Quantity")] Harvest harvest)
+        {
+            if (id != harvest.HarvestID)
+            {
+                return NotFound();
+            }
+
+                
+                    context.Update(harvest);
+                    await context.SaveChangesAsync();
+                
 
 
+                
+
+                return RedirectToAction(nameof(Index));
+            
+
+            return View(harvest);
+        }
+
+        private bool HarvestExists(int id)
+        {
+            return context.Harvests.Any(e => e.HarvestID == id);
+        }
 
 
+        /*            if (ModelState.IsValid)
+            {
+                try
+                {
+                    context.Update(harvest);
+                    await context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!HarvestExists(harvest.HarvestID))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+
+                return RedirectToAction(nameof(Index));
+            }*/
 
 
 

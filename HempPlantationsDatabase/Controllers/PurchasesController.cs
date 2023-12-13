@@ -61,7 +61,53 @@ namespace HempPlantationsDatabase.Controllers
             return View(purchase);
         }
 
+        public IActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
 
+            var purchase = context.Purchases.Find(id);
+
+            if (purchase == null)
+            {
+                return NotFound();
+            }
+
+            ViewData["ConsumerID"] = new SelectList(context.Consumers, "ConsumerID", "FullName", purchase.ConsumerID);
+            ViewData["AgronomistID"] = new SelectList(context.Agronomists, "AgronomistID", "FullName", purchase.AgronomistID);
+            ViewData["ProductID"] = new SelectList(context.Products, "ProductID", "ProductName", purchase.ProductID);
+
+            return View(purchase);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("PurchaseID,ConsumerID,AgronomistID,ProductID,PurchaseDate,Quantity,TotalPrice")] Purchase purchase)
+        {
+            if (id != purchase.PurchaseID)
+            {
+                return NotFound();
+            }
+
+
+                context.Update(purchase);
+                await context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            
+
+            ViewData["ConsumerID"] = new SelectList(context.Consumers, "ConsumerID", "FullName", purchase.ConsumerID);
+            ViewData["AgronomistID"] = new SelectList(context.Agronomists, "AgronomistID", "FullName", purchase.AgronomistID);
+            ViewData["ProductID"] = new SelectList(context.Products, "ProductID", "ProductName", purchase.ProductID);
+
+            return View(purchase);
+        }
+
+        private bool PurchaseExists(int id)
+        {
+            return context.Purchases.Any(e => e.PurchaseID == id);
+        }
 
 
 

@@ -56,5 +56,54 @@ namespace HempPlantationsDatabase.Controllers
 
             return View(review);
         }
+
+
+        public IActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var review = context.Reviews.Find(id);
+
+            if (review == null)
+            {
+                return NotFound();
+            }
+
+            ViewData["ConsumerID"] = new SelectList(context.Consumers, "ConsumerID", "FullName", review.ConsumerID);
+            ViewData["AgronomistID"] = new SelectList(context.Agronomists, "AgronomistID", "FullName", review.AgronomistID);
+
+            return View(review);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("ReviewID,ConsumerID,AgronomistID,ReviewDate,Rating,Comment")] Review review)
+        {
+            if (id != review.ReviewID)
+            {
+                return NotFound();
+            }
+
+
+                    context.Update(review);
+                    await context.SaveChangesAsync();
+
+
+            return RedirectToAction(nameof(Index));
+            
+
+            ViewData["ConsumerID"] = new SelectList(context.Consumers, "ConsumerID", "FullName", review.ConsumerID);
+            ViewData["AgronomistID"] = new SelectList(context.Agronomists, "AgronomistID", "FullName", review.AgronomistID);
+
+            return View(review);
+        }
+
+        private bool ReviewExists(int id)
+        {
+            return context.Reviews.Any(e => e.ReviewID == id);
+        }
     }
 }

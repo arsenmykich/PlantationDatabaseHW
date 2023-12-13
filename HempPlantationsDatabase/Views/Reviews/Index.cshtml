@@ -43,6 +43,8 @@
             <p><strong>Rating:</strong> @item.Rating</p>
             <p><strong>Comment:</strong> @item.Comment</p>
             <!-- Add other fields as needed -->
+            <!-- Edit Button -->
+            <a href="@Url.Action("Edit", "Reviews", new { id = item.ReviewID })" class="btn btn-primary edit-button">Edit</a>
         </div>
     }
 

@@ -1,0 +1,40 @@
+﻿@model databaseHempPlantations.Models.TravelAssignment
+
+@{
+    ViewData["Title"] = "Edit TravelAssignment";
+}
+
+<h1>Edit TravelAssignment</h1>
+
+<form asp-action="Edit" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <input type="hidden" asp-for="TravelAssignmentID" />
+
+    <div class="form-group">
+        <label asp-for="TripID" class="control-label">Trip</label>
+        <select asp-for="TripID" class="form-control" asp-items="ViewBag.TripID"></select>
+        <span asp-validation-for="TripID" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="AgronomistID" class="control-label">Agronomist</label>
+        <select asp-for="AgronomistID" class="form-control" asp-items="ViewBag.AgronomistID"></select>
+        <span asp-validation-for="AgronomistID" class="text-danger"></span>
+    </div>
+
+    <!-- Add more form groups for other properties -->
+
+    <div class="form-group">
+        <input type="submit" value="Save Changes" class="btn btn-primary" />
+    </div>
+</form>
+
+<a asp-action="Index">Back to TravelAssignment List</a>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

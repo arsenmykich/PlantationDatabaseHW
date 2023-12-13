@@ -27,6 +27,7 @@
             margin: 5px 0;
         }
     </style>
+    <a href="@Url.Action("Create", "Agronomists")" class="list-group-item list-group-item-action btn btn-primary">Create</a>
 </head>
 <body>
     <h2>Agronomists</h2>
@@ -40,6 +41,10 @@
             <p><strong>Phone number:</strong> @item.PhoneNumber</p>
             <p><strong>Hire date:</strong> @item.HireDate.ToShortDateString()</p>
             <p><strong>Specialty:</strong> @item.Specialty</p>
+
+            <!-- Edit Button -->
+            <a href="@Url.Action("Edit", "Agronomists", new { id = item.AgronomistID })" class="btn btn-primary edit-button">Edit</a>
+
         </div>
     }
 </body>
