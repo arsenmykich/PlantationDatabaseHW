@@ -105,5 +105,34 @@ namespace HempPlantationsDatabase.Controllers
             return context.Consumers.Any(e => e.ConsumerID == id);
         }
 
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var consumer = await context.Consumers
+                .FirstOrDefaultAsync(m => m.ConsumerID == id);
+            if (consumer == null)
+            {
+                return NotFound();
+            }
+
+            return View(consumer);
+        }
+
+        // POST: Consumers/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var consumer = await context.Consumers.FindAsync(id);
+            context.Consumers.Remove(consumer);
+            await context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+
     }
 }

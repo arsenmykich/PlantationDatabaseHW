@@ -122,27 +122,36 @@ namespace HempPlantationsDatabase.Controllers
         }
 
 
-        /*            if (ModelState.IsValid)
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
             {
-                try
-                {
-                    context.Update(harvest);
-                    await context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!HarvestExists(harvest.HarvestID))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
+                return NotFound();
+            }
 
-                return RedirectToAction(nameof(Index));
-            }*/
+            var harvest = await context.Harvests
+                .Include(h => h.HempVariety)
+                .Include(h => h.Agronomist)
+                .FirstOrDefaultAsync(m => m.HarvestID == id);
+
+            if (harvest == null)
+            {
+                return NotFound();
+            }
+
+            return View(harvest);
+        }
+
+        // POST: Harvests/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var harvest = await context.Harvests.FindAsync(id);
+            context.Harvests.Remove(harvest);
+            await context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
 
 
 

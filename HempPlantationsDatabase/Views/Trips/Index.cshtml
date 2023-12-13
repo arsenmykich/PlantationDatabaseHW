@@ -27,6 +27,9 @@
         p {
             margin: 5px 0;
         }
+        a{
+            margin: 10 px 0;
+        }
     </style>
     <a href="@Url.Action("Create", "Trips")" class="list-group-item list-group-item-action btn btn-primary">Create</a>
 </head>
@@ -43,7 +46,8 @@
             <p><strong>Destination:</strong> @item.Destination</p>
             <!-- Add other fields as needed -->
             <!-- Edit Button -->
-            <a href="@Url.Action("Edit", "Trips", new { id = item.TripID })" class="btn btn-primary edit-button">Edit</a>
+            <p href="@Url.Action("Edit", "Trips", new { id = item.TripID })" class="btn btn-primary edit-button">Edit</p>
+            <a href="@Url.Action("Delete", "Trips", new { id = item.TripID })" class="btn btn-primary edit-button">Delete</a>
         </div>
     }
 </body>

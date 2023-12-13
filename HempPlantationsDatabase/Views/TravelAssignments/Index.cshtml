@@ -43,7 +43,8 @@
             <p><strong>Trip ID:</strong> @item.TripID</p>
             <!-- Add other fields as needed -->
             <!-- Edit Button -->
-            <a href="@Url.Action("Edit", "TravelAssignments", new { id = item.TravelAssignmentID })" class="btn btn-primary edit-button">Edit</a>
+            <p href="@Url.Action("Edit", "TravelAssignments", new { id = item.TravelAssignmentID })" class="btn btn-primary edit-button">Edit</p>
+            <a href="@Url.Action("Delete", "TravelAssignments", new { id = item.TravelAssignmentID })" class="btn btn-primary edit-button" style="margin-top: 5px;">Delete</a>
         </div>
     }
 </body>

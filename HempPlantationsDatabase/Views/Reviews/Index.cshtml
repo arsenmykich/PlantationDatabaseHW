@@ -45,6 +45,7 @@
             <!-- Add other fields as needed -->
             <!-- Edit Button -->
             <a href="@Url.Action("Edit", "Reviews", new { id = item.ReviewID })" class="btn btn-primary edit-button">Edit</a>
+            <a href="@Url.Action("Delete", "Reviews", new { id = item.ReviewID })" class="btn btn-primary edit-button" style="margin-top: 5px;">Delete</a>
         </div>
     }
 

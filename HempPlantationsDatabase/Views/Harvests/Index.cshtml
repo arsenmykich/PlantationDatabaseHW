@@ -46,6 +46,8 @@
 
             <!-- Edit Button -->
             <a href="@Url.Action("Edit", "Harvests", new { id = item.HarvestID })" class="btn btn-primary edit-button">Edit</a>
+            <a href="@Url.Action("Delete", "Harvests", new { id = item.HarvestID })" class="btn btn-primary edit-button" style="margin-top: 5px;">Delete</a>
+
         </div>
     }
 </body>
