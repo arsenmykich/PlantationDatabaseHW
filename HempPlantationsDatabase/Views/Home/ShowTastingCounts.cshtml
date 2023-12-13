@@ -1,5 +1,5 @@
 ﻿@*  @model IEnumerable<TastingCountViewModel> *@
-@model IEnumerable<object>
+@model IEnumerable<TastingDate>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -49,10 +49,9 @@
             @foreach (var item in Model)
             {
                 <tr>
-                    <td>@item</td>
-                    @* <td>@item.AgronomID</td>
-                <td>@item.ProductID</td>
-                <td>@item.TastingCount</td> *@
+                    <td>@item.AgronomID</td>
+                    <td>@item.ProductID</td>
+                    <td>@item.TastingCount</td>
                 </tr>
             }
         </tbody>

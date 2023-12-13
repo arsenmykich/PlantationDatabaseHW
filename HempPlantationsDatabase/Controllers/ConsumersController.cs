@@ -13,7 +13,6 @@ namespace HempPlantationsDatabase.Controllers
         {
             this.context = context;
         }
-
         public IActionResult Index()
         {
             var consumers = this.context.Consumers.Select(c => new Consumer

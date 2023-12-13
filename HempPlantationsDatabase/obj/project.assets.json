@@ -2332,6 +2332,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Microsoft.EntityFrameworkCore >= 8.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.0",
       "Newtonsoft.Json >= 13.0.3",
@@ -2339,31 +2340,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\arsen\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/Users/romanmac/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\cpp\\000 cs\\0 1univer\\02DBProject\\HempPlantationsDatabase\\HempPlantationsDatabase.csproj",
+      "projectUniqueName": "/Users/romanmac/ПЗ/Practice/DB_Project/PlantationDatabaseHW/HempPlantationsDatabase/HempPlantationsDatabase.csproj",
       "projectName": "HempPlantationsDatabase",
-      "projectPath": "D:\\cpp\\000 cs\\0 1univer\\02DBProject\\HempPlantationsDatabase\\HempPlantationsDatabase.csproj",
-      "packagesPath": "C:\\Users\\arsen\\.nuget\\packages\\",
-      "outputPath": "D:\\cpp\\000 cs\\0 1univer\\02DBProject\\HempPlantationsDatabase\\obj\\",
+      "projectPath": "/Users/romanmac/ПЗ/Practice/DB_Project/PlantationDatabaseHW/HempPlantationsDatabase/HempPlantationsDatabase.csproj",
+      "packagesPath": "/Users/romanmac/.nuget/packages/",
+      "outputPath": "/Users/romanmac/ПЗ/Practice/DB_Project/PlantationDatabaseHW/HempPlantationsDatabase/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\arsen\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/romanmac/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "/usr/local/share/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2382,6 +2377,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[8.0.0, )"
+          },
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
@@ -2422,7 +2421,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
