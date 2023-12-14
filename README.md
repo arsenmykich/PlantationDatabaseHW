@@ -42,7 +42,7 @@
 
 Веб-сайт розміщений на веб-сервері хостингу Microsoft Azure. 
 
-Відповідне посилання на сайт - - HempPlantationsDatabase (narazibeznazvy.azurewebsites.net) 
+Відповідне посилання на сайт [- - HempPlantationsDatabase (narazibeznazvy.azurewebsites.net)](https://narazibeznazvy.azurewebsites.net/) 
 
   - Функції сайту 
 
