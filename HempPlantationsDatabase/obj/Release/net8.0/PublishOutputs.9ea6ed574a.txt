@@ -1,0 +1,13 @@
+D:\cpp\000 cs\0 1univer\02DBProject\HempPlantationsDatabase\obj\Release\net8.0\PubTmp\Out\HempPlantationsDatabase.exe
+D:\cpp\000 cs\0 1univer\02DBProject\HempPlantationsDatabase\obj\Release\net8.0\PubTmp\Out\appsettings.Development.json
+D:\cpp\000 cs\0 1univer\02DBProject\HempPlantationsDatabase\obj\Release\net8.0\PubTmp\Out\appsettings.json
+D:\cpp\000 cs\0 1univer\02DBProject\HempPlantationsDatabase\obj\Release\net8.0\PubTmp\Out\HempPlantationsDatabase.dll
+D:\cpp\000 cs\0 1univer\02DBProject\HempPlantationsDatabase\obj\Release\net8.0\PubTmp\Out\HempPlantationsDatabase.runtimeconfig.json
+D:\cpp\000 cs\0 1univer\02DBProject\HempPlantationsDatabase\obj\Release\net8.0\PubTmp\Out\HempPlantationsDatabase.pdb
+D:\cpp\000 cs\0 1univer\02DBProject\HempPlantationsDatabase\obj\Release\net8.0\PubTmp\Out\Microsoft.EntityFrameworkCore.dll
+D:\cpp\000 cs\0 1univer\02DBProject\HempPlantationsDatabase\obj\Release\net8.0\PubTmp\Out\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\cpp\000 cs\0 1univer\02DBProject\HempPlantationsDatabase\obj\Release\net8.0\PubTmp\Out\Microsoft.EntityFrameworkCore.Relational.dll
+D:\cpp\000 cs\0 1univer\02DBProject\HempPlantationsDatabase\obj\Release\net8.0\PubTmp\Out\Newtonsoft.Json.dll
+D:\cpp\000 cs\0 1univer\02DBProject\HempPlantationsDatabase\obj\Release\net8.0\PubTmp\Out\Npgsql.dll
+D:\cpp\000 cs\0 1univer\02DBProject\HempPlantationsDatabase\obj\Release\net8.0\PubTmp\Out\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+D:\cpp\000 cs\0 1univer\02DBProject\HempPlantationsDatabase\obj\Release\net8.0\PubTmp\Out\HempPlantationsDatabase.deps.json

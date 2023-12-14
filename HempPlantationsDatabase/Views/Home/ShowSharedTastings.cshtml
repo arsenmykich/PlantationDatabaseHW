@@ -1,4 +1,4 @@
-﻿@model IEnumerable<int>
+﻿@model IEnumerable<databaseHempPlantations.Models.Tasting>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -40,17 +40,28 @@
         <thead>
             <tr>
                 <th>Tasting ID</th>
+                <th>Agronomist ID</th>
+                <th>Consumer ID</th>
+                <th>Product ID</th>
+                <th>Tasting Date</th>
+                <th>Rating</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var tastingId in Model)
+            @foreach (var tasting in Model)
             {
                 <tr>
-                    <td>@tastingId</td>
+                    <td>@tasting.TastingID</td>
+                    <td>@tasting.AgronomistID</td>
+                    <td>@tasting.ConsumerID</td>
+                    <td>@tasting.ProductID</td>
+                    <td>@tasting.TastingDate.ToString("yyyy-MM-dd")</td>
+                    <td>@tasting.Rating</td>
                 </tr>
             }
         </tbody>
     </table>
+
     <a asp-action="Index">Back to Main Menu</a>
 </body>
 </html>

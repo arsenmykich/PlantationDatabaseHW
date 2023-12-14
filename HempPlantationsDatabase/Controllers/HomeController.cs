@@ -30,11 +30,11 @@ namespace HempPlantationsDatabase.Controllers
 
 
 
-        public IActionResult CreateHarvest()
+        /*public IActionResult CreateHarvest()
         {
             // Implement your logic for creating a new harvest
             return View(); // You can redirect to the Create view for Harvests or implement your logic
-        }
+        }*/
 
 
         public IActionResult InputDataDistinctCustomers()
@@ -44,14 +44,18 @@ namespace HempPlantationsDatabase.Controllers
         //1
         public IActionResult ShowDistinctConsumers(int agronomID, int n ,DateTime from_date, DateTime to_date)
         {
-            var distinctCustomerIds = context.Purchases
+                var distinctCustomerIds = context.Purchases
                 .Where(p => p.AgronomistID == agronomID && p.PurchaseDate >= from_date && p.PurchaseDate <= to_date)
                 .GroupBy(p => p.ConsumerID)
                 .Where(g => g.Count() >= n)
                 .Select(g => g.Key)
                 .ToList();
 
-            return View(distinctCustomerIds.ToList());
+            var distinctCustomers = context.Consumers
+                .Where(c => distinctCustomerIds.Contains(c.ConsumerID))
+                .ToList();
+
+            return View(distinctCustomers);
         }
 
         ////2
@@ -72,10 +76,16 @@ namespace HempPlantationsDatabase.Controllers
             var purchasedProductIds = context.Purchases
                 .Where(p => p.ConsumerID == consumerID && p.PurchaseDate >= from_date_products && p.PurchaseDate <= to_date_products)
                 .Select(p => p.ProductID)
+                .Distinct()
                 .ToList();
 
-            return View(purchasedProductIds);
+            var purchasedProducts = context.Products
+                .Where(pr => purchasedProductIds.Contains(pr.ProductID))
+                .ToList();
+
+            return View(purchasedProducts);
         }
+
 
 
         //3 upd
@@ -88,8 +98,13 @@ namespace HempPlantationsDatabase.Controllers
                 .Select(g => g.Key)
                 .ToList();
 
-            return View(agronomistIds);
+            var agronomists = context.Agronomists
+                .Where(a => agronomistIds.Contains(a.AgronomistID))
+                .ToList();
+
+            return View(agronomists);
         }
+
 
 
 
@@ -102,8 +117,13 @@ namespace HempPlantationsDatabase.Controllers
                 .Distinct()
                 .ToList();
 
-            return View(traveledAgronomistIds);
+            var traveledAgronomists = context.Agronomists
+                .Where(a => traveledAgronomistIds.Contains(a.AgronomistID))
+                .ToList();
+
+            return View(traveledAgronomists);
         }
+
 
 
         //5
@@ -116,12 +136,16 @@ namespace HempPlantationsDatabase.Controllers
                 .Distinct()
                 .ToList();
 
-            return View(agronomistIds);
+            var agronomists = context.Agronomists
+                .Where(a => agronomistIds.Contains(a.AgronomistID))
+                .ToList();
+
+            return View(agronomists);
         }
 
 
 
-        //6 need fix | upd needs check |  good
+        //6 need fix upd needs check
         public IActionResult ShowConsumersForDistinctProductPurchases(int n_distinct_products, DateTime from_date_distinct_products, DateTime to_date_distinct_products)
         {
             var consumerIds = context.Purchases
@@ -131,7 +155,11 @@ namespace HempPlantationsDatabase.Controllers
                 .Select(g => g.Key)
                 .ToList();
 
-            return View(consumerIds);
+            var consumers = context.Consumers
+                .Where(c => consumerIds.Contains(c.ConsumerID))
+                .ToList();
+
+            return View(consumers);
         }
 
 
@@ -147,7 +175,11 @@ namespace HempPlantationsDatabase.Controllers
                 .Select(g => g.Key)
                 .ToList();
 
-            return View(agronomistIds);
+            var agronomists = context.Agronomists
+                .Where(a => agronomistIds.Contains(a.AgronomistID))
+                .ToList();
+
+            return View(agronomists);
         }
 
         //8 upd
@@ -159,7 +191,11 @@ namespace HempPlantationsDatabase.Controllers
                 .Distinct()
                 .ToList();
 
-            return View(sharedTastingIds);
+            var tastings = context.Tastings
+                .Where(a => sharedTastingIds.Contains(a.TastingID))
+                .ToList();
+
+            return View(tastings);
         }
 
         //9 upd
@@ -169,11 +205,12 @@ namespace HempPlantationsDatabase.Controllers
                 .Where(t => t.AgronomistID == agronom_id_tasting_counts && t.TastingDate >= from_date_tasting_counts && t.TastingDate <= to_date_tasting_counts)
                 .GroupBy(t => new { t.AgronomistID, t.ProductID })
                 .Where(g => g.Count() >= min_consumers_tasting_counts)
-                .Select(g => new { AgronomID = g.Key.AgronomistID, ProductID = g.Key.ProductID, TastingCount = g.Count() })
+                .Select(g => new TastingDate { AgronomID = g.Key.AgronomistID, ProductID = g.Key.ProductID, TastingCount = g.Count() })
                 .ToList();
 
             return View(tastingCounts);
         }
+
 
         //10 upd
         public IActionResult ShowReviewCounts(int consumer_id_review_counts, DateTime from_date_review_counts, DateTime to_date_review_counts)
@@ -186,45 +223,47 @@ namespace HempPlantationsDatabase.Controllers
 
             return View(reviewCounts);
         }
+        //11 redo
+        public IActionResult ShowSortedHempSorts(DateTime from_date, DateTime to_date, int N)
+        {
+            var hempVarietyTravelCounts = context.Harvests
+                .Join(
+                    context.Agronomists,
+                    h => h.AgronomistID,
+                    a => a.AgronomistID,
+                    (h, a) => new { HempSort = h.HempVariety.VarietyName, AgronomistID = a.AgronomistID }
+                )
+                .Where(ha => context.Trips
+                    .Where(ta => ta.AgronomistID == ha.AgronomistID && ta.TripDate >= from_date && ta.TripDate <= to_date)
+                    .Select(ta => ta.HarvestID)
+                    .Distinct()
+                    .Count() >= N
+                )
+                .GroupBy(ha => ha.HempSort)
+                .Select(g => new HempSortAvgTravelCountViewModel
+                {
+                    HempSort = g.Key,
+                    AvgTravelCount = g.Count()
+                })
+                .OrderByDescending(h => h.AvgTravelCount)
+                .ToList();
 
+            return View(hempVarietyTravelCounts);
+        }
 
-
-        //11 need fix(extremely)
-        //public IActionResult ShowSortedHempSorts(int n, DateTime fromDate, DateTime toDate)
-        //{
-        //    var sortedHempSorts = context.Harvests
-        //        .Where(h => h.HarvestDate >= fromDate && h.HarvestDate <= toDate)
-        //        .GroupBy(h => h.VarietyID)
-        //        .Select(group => new
-        //        {
-        //            HempSort = group.Key,
-        //            AvgTravelCount = context.Agronomists
-        //                .Where(a => a.TravelAssignments
-        //                    .Any(ta => ta.TravelDate >= fromDate && ta.TravelDate <= toDate)
-        //                    && context.Harvests
-        //                        .Count(h => h.AgronomistID == a.AgronomistID && h.HarvestDate >= fromDate && h.HarvestDate <= toDate) >= n
-        //                )
-        //                .Select(a => a.TravelAssignments.Count(ta => ta.TravelDate >= fromDate && ta.TravelDate <= toDate))
-        //                .DefaultIfEmpty(0)
-        //                .Average()
-        //        })
-        //        .OrderByDescending(result => result.AvgTravelCount)
-        //        .ToList();
-
-        //    return View(sortedHempSorts);
-        //}
 
         //12 not upd
-        public IActionResult ShowProductsByReturnPercentage(int n)
+        public IActionResult ShowProductsByReturnPercentage(DateTime from_date, DateTime to_date, int n)
         {
             var products = context.Purchases
+                .Where(p => p.PurchaseDate >= from_date && p.PurchaseDate <= to_date)
                 .GroupBy(p => p.ProductID)
                 .Select(g => new ProductPurchaseViewModel
                 {
                     ProductID = g.Key,
                     CustomerCount = g.Select(p => p.ConsumerID).Distinct().Count(),
                     ReturnCustomerCount = context.Returns
-                        .Count(r => r.ProductID == g.Key && r.Quantity > 0),
+                        .Count(r => r.ProductID == g.Key && r.Quantity > 0 ),
                     ReturnPercentage = g.Any() ?
                         context.Returns.Count(r => r.ProductID == g.Key && r.Quantity > 0) * 100.0 / g.Select(p => p.ConsumerID).Distinct().Count() : 0
                 })
@@ -234,8 +273,6 @@ namespace HempPlantationsDatabase.Controllers
 
             return View(products);
         }
-
-
 
 
 

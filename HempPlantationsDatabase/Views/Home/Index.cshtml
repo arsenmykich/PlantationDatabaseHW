@@ -53,7 +53,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <p class="lead">
-                                1)Для агронома A знайти всіх споживачів, яким він продавав продукт хоча б N разів за вказаний період (з дати F по дату T):
+                                1) Для агронома A знайти всіх споживачів, яким він продавав продукт хоча б N разів за вказаний період (з дати F по дату T):
                             </p>
                         </div>
                     </div>
@@ -94,7 +94,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <p class="lead">
-                                2)Для споживача C знайти всі продукти, які він придбав за вказаний період (з дати F по дату T):
+                                2) Для споживача C знайти всі продукти, які він придбав за вказаний період (з дати F по дату T):
                             </p>
                         </div>
                     </div>
@@ -129,7 +129,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <p class="lead">
-                                3)Для споживача C знайти всіх агрономів, які проводили для нього дегустацію хоча б N разів за вказаний період (з дати F по дату T):
+                                3) Для споживача C знайти всіх агрономів, які проводили для нього дегустацію хоча б N разів за вказаний період (з дати F по дату T):
                             </p>
                         </div>
                     </div>
@@ -169,7 +169,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <p class="lead">
-                                4)Для агронома А знайти всіх агрономів, з якими він їздив у відрядження протягом вказаного періоду (з дати F по дату T):
+                                4) Для агронома А знайти всіх агрономів, з якими він їздив у відрядження протягом вказаного періоду (з дати F по дату T):
                             </p>
                         </div>
                     </div>
@@ -205,7 +205,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <p class="lead">
-                                5)Для споживача С знайти всіх агрономів, які продали йому хоча б щось та провели для нього хоча б одну дегустацію протягом вказаного періоду (з дати F по дату T):
+                                5) Для споживача С знайти всіх агрономів, які продали йому хоча б щось та провели для нього хоча б одну дегустацію протягом вказаного періоду (з дати F по дату T):
                             </p>
                         </div>
                     </div>
@@ -241,7 +241,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <p class="lead">
-                                6)Знайти всіх споживачів, які купили щонайменше N різних продуктів за вказаний період (з дати F по дату T):
+                                6) Знайти всіх споживачів, які купили щонайменше N різних продуктів за вказаний період (з дати F по дату T):
                             </p>
                         </div>
                     </div>
@@ -277,7 +277,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <p class="lead">
-                                7)Знайти всіх агрономів, які збирали урожай хоча б N різних сортів коноплі за вказаний період (з дати F по дату T):
+                                7) Знайти всіх агрономів, які збирали урожай хоча б N різних сортів коноплі за вказаний період (з дати F по дату T):
                             </p>
                         </div>
                     </div>
@@ -313,7 +313,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <p class="lead">
-                                8)Знайти всі спільні дегустації для споживача С та агронома А за вказаний період (з дати F по дату T):
+                                8) Знайти всі спільні дегустації для споживача С та агронома А за вказаний період (з дати F по дату T):
                             </p>
                         </div>
                     </div>
@@ -348,7 +348,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <p class="lead">
-                                9)Для агронома A та кожного продукту, дегустацію якого він проводив, знайти скільки разів за вказаний період (з дати F по дату T) він проводив дегустацію для щонайменше N споживачів:
+                                9) Для агронома A та кожного продукту, дегустацію якого він проводив, знайти скільки разів за вказаний період (з дати F по дату T) він проводив дегустацію для щонайменше N споживачів:
                             </p>
                         </div>
                     </div>
@@ -384,7 +384,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <p class="lead">
-                                10)Для споживача С знайти сумарну кількість відгуків по місяцях, які він залишив за вказаний період (з дати F по дату T)
+                                10) Для споживача С знайти сумарну кількість відгуків по місяцях, які він залишив за вказаний період (з дати F по дату T)
                             </p>
                         </div>
                     </div>
@@ -416,21 +416,62 @@
                     <input type="text" id="n" name="n" required />
                     <button type="submit">Show Hemp Sorts (not working)</button>
                 </form> *@
+                <!-- Form 11 -->
+                <form asp-action="ShowSortedHempSorts" asp-controller="Home" method="post" class="my-form">
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <p class="lead">
+                                11) Вивести сорти коноплі у порядку спадання середньої кількості відряджень, у які їздили агрономи, що збирали його урожай хоча б N разів за вказаний період (з дати F по дату T)
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="from_date_harvest_travel_counts">From Date:</label>
+                        <input type="datetime" id="from_date_harvest_travel_counts" name="from_date_harvest_travel_counts" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="to_date_harvest_travel_counts">To Date:</label>
+                        <input type="datetime" id="to_date_harvest_travel_counts" name="to_date_harvest_travel_counts" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="N_harvest_travel_counts">Minimum Harvest Count (N):</label>
+                        <input type="number" id="N_harvest_travel_counts" name="N_harvest_travel_counts" class="form-control" required />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Show result</button>
+                </form>
+                <script>
+                    window.onload = function () {
+                        document.getElementById('from_date_harvest_travel_counts').value = '2023-01-01T12:00:00+03:00';
+                        document.getElementById('to_date_harvest_travel_counts').value = '2023-12-12T12:00:00+03:00';
+                    };
+                </script>
+
+
                 <!-- Форма 12 -->
                 <form asp-action="ShowProductsByReturnPercentage" asp-controller="Home" method="post" class="my-form">
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <p class="lead">
-                                12)Вивести продукти, які були придбані щонайменше N різними споживачами у порядку спадання відсотку повернень
+                                12) Вивести продукти, які були придбані щонайменше N різними споживачами у порядку спадання відсотку повернень
                             </p>
                         </div>
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="form-group">
+                        <label for="from_date">From Date:</label>
+                        <input type="datetime" id="from_date" name="from_date" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="to_date">To Date:</label>
+                        <input type="datetime" id="to_date" name="to_date" class="form-control" required />
+                    </div>
+                    <div class="form-group">
                         <label for="n">Value of N:</label>
                         <input type="text" id="n" name="n" class="form-control" required />
                     </div>
 
                     <button type="submit" class="btn btn-primary">Show result</button>
+                    
+                    
                     <div class="empty-space">
 
 
@@ -438,6 +479,12 @@
 
                     </div>
                 </form>
+                <script>
+                    window.onload = function () {
+                        document.getElementById('from_date').value = '2023-01-01T12:00';
+                        document.getElementById('to_date').value = '2023-12-12T12:00';
+                    };
+                </script>
     
             </div>
         </div>

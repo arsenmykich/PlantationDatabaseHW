@@ -1,4 +1,4 @@
-﻿@model IEnumerable<int>
+﻿@model IEnumerable<databaseHempPlantations.Models.Consumer>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -35,20 +35,29 @@
 </head>
 <body>
     <h1>Distinct Consumers</h1>
-
     <table>
         <thead>
             <tr>
                 <th>Consumer ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Registration Date</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var customerId in Model)
-            {
-                <tr>
-                    <td>@customerId</td>
-                </tr>
-            }
+        @foreach (var consumer in Model)
+        {
+            <tr>
+                <td>@consumer.ConsumerID</td>
+                <td>@consumer.FirstName</td>
+                <td>@consumer.LastName</td>
+                <td>@consumer.Email</td>
+                <td>@consumer.PhoneNumber</td>
+                <td>@consumer.RegistrationDate</td>
+            </tr>
+        }
         </tbody>
     </table>
     <a asp-action="Index">Back to Main Menu</a>
